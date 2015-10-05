@@ -1,0 +1,68 @@
+$prize-stand-w: 499px;
+$prize-stand-h: 212px;
+
+.tourney-stands {
+  width: 100%;
+  margin-bottom: 62px;
+  position: relative;
+  .prize-stand {
+    @include size(100%,$prize-stand-h);
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -33px;
+      @include size($prize-stand-w,$prize-stand-h);
+      background: url("../images/tourney-stands.png") no-repeat 0 0;
+    }
+  }
+  .winner-block {
+    position: absolute;
+    top: 211px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    .win-info {
+      position: absolute;
+      font: {
+        size: 13px;
+        weight: 600;
+      }
+      color: $blue;
+      .balance-value {
+        font: {
+          size: 21px;
+          weight: 400;
+          family: "Russo One", sans-serif;
+        }
+        margin-bottom: 21px;
+        .rub {
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 9px;
+            left: 2px;
+            font-size: 13px;
+            content: "-";
+          }
+        }
+      }
+      .login {
+        margin-bottom: 6px;
+      }
+      &.first-place {
+        left: 160px;
+        right: 160px;
+      }
+      &.second-place {
+        left: 28px;
+        right: 279px;
+      }
+      &.third-place {
+        left: 277px;
+        right: 30px;
+      }
+    }
+  }
+}

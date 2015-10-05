@@ -1,0 +1,113 @@
+$tourn-img-bg-h: 180px;
+$aside-img-w: 200px;
+$aside-img-h: 130px;
+$profitable-game-block-h: 130px;
+$profitable-game-w: 180px;
+$best-tourney-w: 210px;
+$best-tourney-h: 45px;
+
+.aside-block.tournaments.all-tourney-table {
+  .tourn-img-bg {
+    padding-top: 26px;
+    @include border-box();
+    @include size($tournament-banner-img-w,$tourn-img-bg-h);
+    position: relative;
+    background: url("../images/aside-table-bg.png") no-repeat 0 0;
+    .tourn-img-container {
+      position: relative;
+      @include size($aside-img-w,$aside-img-h);
+      margin: 0 auto;
+    }
+    .big-grad {
+      @include size($aside-img-w + 4,$aside-img-h + 4);
+      top: -2px;
+      left: -2px;
+      @extend %big-img-grad;
+    }
+    .small-grad {
+      @include size($aside-img-w + 2,$aside-img-h + 2);
+      top: -1px;
+      left: -1px;
+      @extend %small-img-grad;
+    }
+    .img-shadow {
+      @extend %img-shadow;
+      @include size($aside-img-w,$aside-img-h);
+      z-index: 4;
+      &:before {
+        z-index: 5;
+      }
+      .tourn-img {
+        @include size($aside-img-w,$aside-img-h);
+        position: relative;
+      }
+    }
+  }
+  .profitable-game-block {
+    @include size($aside-width - 2,$profitable-game-block-h);
+    margin: 0 auto 24px;
+    background: url("../images/aside-texture.png") no-repeat 0 0;
+    text-align: center;
+    .profitable-game {
+      .game-name {
+        float: left;
+        padding-left: 10px;
+        padding-right: 3px;
+        width: $profitable-game-w;
+        @include border-box();
+        padding-top: 10px;
+        color: $light-green;
+        text:
+        {
+          align: left;
+        }
+        .name {
+          @extend %text-overflow;
+          font: {
+            size: 16px;
+            weight: 600;
+          }
+          margin-bottom: 8px;
+          text-transform: uppercase;
+        }
+        .description {
+          font: {
+            size: 13px;
+            weight: 300;
+          }
+          @extend %text-overflow;
+        }
+      }
+      .play-btn {
+        float: left;
+        margin-top: 16px;
+        @extend %small-green-btn;
+      }
+      margin-bottom: 30px;
+    }
+    .best-tourney {
+      display: inline-block;
+      max-width: $best-tourney-w;
+      height: $best-tourney-h;
+      line-height: 1.2;
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+      color: $blue;
+      text: {
+        transform: uppercase;
+        align: center;
+        decoration: underline;
+      }
+    }
+  }
+  .leaders-table-name {
+    margin-top: 9px;
+  }
+  .btn-container {
+    .join-btn {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+$tournament-icon-w: 32px;
+$tournament-icon-h: 30px;
+$tournament-banner-img-w: 298px;
+$tournament-banner-img-h: 194px;
+$counter-h: 55px;
+$counter-count-time-w: 30px;
+$time-counter-rhomb-w: 50px;
+$time-counter-rhomb-h: 53px;
+$small-jackpot-h: 70px;
+$counter-line-h: 33px;
+$small-jackpot-rub-width: 23px;
+$small-jackpot-eur-width: 23px;
+$small-jackpot-usd-width: 20px;
+
+.aside-block.tournaments {
+  .aside-header {
+    .icon-container {
+      .icon {
+        @include size($tournament-icon-w, $tournament-icon-h);
+        background: url("../images/sprite/sprite.png") no-repeat -95px 0px;
+        margin-top: 0px;
+        left: -1px;
+      }
+    }
+  }
+  a {
+    display: block;
+    margin: 0 auto;
+    @include size($tournament-banner-img-w, $tournament-banner-img-h);
+    position: relative;
+    z-index: 2;
+  }
+  .banner-img {
+    display: block;
+    @include size($tournament-banner-img-w, $tournament-banner-img-h);
+  }
+  .counter-section {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 170px;
+    width: $aside-width - 2;
+    background: url("../images/aside-texture.png") no-repeat 0 0;
+    text-align: center;
+    .counter {
+      display: block;
+      height: $counter-h;
+      text-align: center;
+      .count {
+        display: inline-block;
+        height: $counter-h;
+        width: $time-counter-rhomb-w;
+        margin-top: 1px;
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+        position: relative;
+        &:before {
+          position: absolute;
+          top: -5px;
+          left: 0;
+          content: "";
+          @include size($time-counter-rhomb-w,$time-counter-rhomb-h);
+          background: url("../images/time-counter-rhomb.png") no-repeat 0 0;
+        }
+        span {
+          display: block;
+          margin-top: 5px;
+          font: {
+            family: "Russo One", sans-serif;
+            weight: 600;
+            size: 28px;
+          }
+          color: $base-color;
+          @include text-shadow(0 2px 0 rgb(3, 18, 30),
+                  0 -2px 2px rgba(#1bfaff,.5),
+                  0 2px 2px rgba(#1bfaff,.5),
+                  -2px 0 2px rgba(#1bfaff,.5),
+                  2px -0 2px rgba(#1bfaff,.5));
+          position: relative;
+        }
+        .time-description {
+          margin-top: 5px;
+          font-size: 10px;
+          color: $blue;
+          text: {
+            transform: uppercase;
+          }
+        }
+      }
+    }
+    &:before {
+      position: absolute;
+      bottom: 0;
+      height: $small-jackpot-h;
+      left: 0;
+      right: 0;
+      z-index: 3;
+    }
+    .small-jackpot {
+      position: relative;
+      height: $small-jackpot-h;
+      .counter-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-top: 15px;
+        height: $jackpot-box-bg-height;
+        .currency {
+          float: left;
+          margin-right: 10px;
+          height: $jackpot-box-bg-height;
+          background: url("../images/small-flip.png") no-repeat 0 0;
+          &.rub {
+            width: $small-jackpot-rub-width;
+            background-position: -325px 0;
+          }
+          &.eur {
+            width: $small-jackpot-eur-width;
+            background-position: -351px 0;
+          }
+          &.usd {
+            width: $small-jackpot-usd-width;
+            background-position: -302px 0;
+          }
+        }
+        #small-jackpot-counter {
+          float: right;
+          height: $jackpot-box-bg-height;
+        }
+      }
+      .jackpot-decription {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        text: {
+          align: center;
+          transform: uppercase;
+        }
+        font-size: 10px;
+        color: $blue;
+      }
+    }
+  }
+}

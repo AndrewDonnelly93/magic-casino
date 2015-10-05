@@ -1,0 +1,158 @@
+$payment-list-item-height: 33px;
+$second-payment-list-item-height: 37px;
+$visa-width: 58px;
+$mastercard-width: 58px;
+$qiwi-width: 64px;
+$yandex-width: 70px;
+$yandex-height: 36px;
+$alpha-width: 98px;
+$sberbank-width: 105px;
+$skrill-width: 56px;
+$psb-width: 145px;
+$neteller-width: 174px;
+$moneta-width: 89px;
+$interkassa-width: 90px;
+$liqpay-width: 79px;
+$w1-width: 45px;
+$sms-width: 73px;
+$wire-transfer-width: 55px;
+$paysafe-width: 108px;
+$footer-logotype-height: 45px;
+$netent-width: 100px;
+$adulthood-width: 39px;
+$logo-crown-width: 31px;
+
+.logotypes-section {
+  padding-top: 99px;
+  padding-bottom: 46px;
+  text-align: center;
+  .payment-list {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 34px;
+    li {
+      float: left;
+      position: relative;
+      background: url("../images/footer-icons/footer-sprite.png") no-repeat 0 0;
+      list-style: none;
+      height: $payment-list-item-height;
+      &.visa {
+        width: $visa-width;
+        margin-right: 20px;
+        background-position: 0px -66px;
+      }
+      &.mastercard {
+        width: $mastercard-width;
+        margin-right: 35px;
+        background-position: 0px -132px;
+      }
+      &.qiwi {
+        width: $qiwi-width;
+        margin-right: 27px;
+        background-position: 0px -231px;
+      }
+      &.alpha {
+        width: $alpha-width;
+        margin-right: 32px;
+        background-position: 0px -264px;
+      }
+      &.yandex {
+        top: -3px;
+        margin-right: 31px;
+        @include size($yandex-width,$yandex-height);
+        background-position: 0px -297px;
+      }
+      &.sberbank {
+        width: $sberbank-width;
+        margin-right: 29px;
+        background-position: 0px -165px;
+      }
+      &.skrill {
+        width: $skrill-width;
+        margin-right: 29px;
+        background-position: 0px -99px;
+      }
+      &.psb {
+        width: $psb-width;
+        margin-right: 29px;
+        background-position: 0 0;
+      }
+      &.neteller {
+        width: $neteller-width;
+        background-position: 0px -198px;
+      }
+      &.moneta {
+        width: $moneta-width;
+        margin-right: 31px;
+        background-position: 0px -370px;
+      }
+      &.interkassa {
+        width: $interkassa-width;
+        margin-right: 32px;
+        background-position: 0px -481px;
+      }
+      &.liqpay {
+        width: $liqpay-width;
+        margin-right: 38px;
+        background-position: 0px -407px;
+      }
+      &.w1 {
+        width: $w1-width;
+        margin-right: 40px;
+        background-position: 0px -518px;
+      }
+      &.sms {
+        width: $sms-width;
+        margin-right: 32px;
+        background-position: 0px -444px;
+      }
+      &.wire-transfer {
+        width: $wire-transfer-width;
+        margin-right: 34px;
+        background-position: 0px -555px;
+      }
+      &.paysafe {
+        width: $paysafe-width;
+        background-position: 0px -333px;
+      }
+    }
+    &.second {
+      li {
+        height: $second-payment-list-item-height;
+      }
+    }
+  }
+  .footer-logotypes {
+    display: inline-block;
+    list-style: none;
+    li {
+      height: $footer-logotype-height;
+      background: url("../images/footer-icons/footer-sprite.png") no-repeat 0 0;
+      float: left;
+      a {
+        display: block;
+        height: $footer-logotype-height;
+      }
+      &.netent {
+        width: $netent-width;
+        a {
+          width: $netent-width;
+        }
+        margin-right: 40px;
+        background-position: 0px -592px;
+      }
+      &.adulthood {
+        width: $adulthood-width;
+        a {
+          width: $adulthood-width;
+        }
+        background-position: 0px -682px;
+      }
+      &.logo-crown {
+        margin-right: 52px;
+        width: $logo-crown-width;
+        background-position: 0px -637px;
+      }
+    }
+  }
+}

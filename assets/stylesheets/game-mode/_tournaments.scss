@@ -1,0 +1,174 @@
+$game-tournament-banner-img-w: 170px;
+$game-tournament-banner-img-h: 110px;
+$game-counter-section-h: 90px;
+$game-counter-h: 30px;
+$game-counter-count-time-w: 22px;
+$game-small-jackpot-h: 30px;
+$game-small-jackpot-rub-width: 15px;
+$game-small-jackpot-eur-width: 15px;
+$game-small-jackpot-usd-width: 13px;
+
+
+.game-mode {
+  .aside-block.tournaments {
+    width: $column-wrapper-w;
+    background: none;
+    border: 0;
+    @include box-shadow(none);
+    .header {
+      background: rgba(#000, .5);
+      @include border-box();
+      border: 1px solid transparent;
+      @include box-shadow(-1px 2px 4px 0 rgba(#000, .41));
+      &:before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        z-index: 2;
+        bottom: -1px;
+        @extend %base-gradient-border;
+      }
+      .best-tourney {
+        text-transform: uppercase;
+        width: $column-wrapper-w;
+        @include border-box();
+        padding: 4px 0 0 5px;
+        line-height: 1.4;
+        color: $blue;
+        @extend %text-overflow;
+        font: {
+          size: 12px;
+          weight: 600;
+        }
+        span {
+          margin-top: 4px;
+          display: block;
+          font: {
+            size: 11px;
+            weight: 300;
+          }
+        }
+      }
+    }
+    a {
+      display: block;
+      margin: 0 auto;
+      @include size($game-tournament-banner-img-w, $game-tournament-banner-img-h);
+      position: relative;
+      z-index: 2;
+    }
+    .banner-img {
+      display: block;
+      @include size($game-tournament-banner-img-w, $game-tournament-banner-img-h);
+    }
+    .counter-section {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 121px;
+      width: $column-wrapper-w;
+      height: $game-counter-section-h;
+      background: url("../images/game-mode/tournament-texture.png") no-repeat 0 0;
+      text-align: center;
+      .counter {
+        display: block;
+        height: $game-counter-h;
+        text-align: center;
+        .count {
+          top: -7px;
+          &:before {
+            display: none;
+          }
+          display: inline-block;
+          height: $game-counter-h;
+          width: $game-counter-count-time-w;
+          margin-right: 21px;
+          &:last-child {
+            margin-right: 0;
+          }
+          position: relative;
+          span {
+            display: block;
+            font: {
+              family: "Russo One", sans-serif;
+              weight: 600;
+              size: 18px;
+            }
+            color: $base-color;
+            @include text-shadow(0 2px 0 rgb(3, 18, 30),
+                    0 -2px 2px rgba(#1bfaff, .5),
+                    0 2px 2px rgba(#1bfaff, .5),
+                    -2px 0 2px rgba(#1bfaff, .5),
+                    2px -0 2px rgba(#1bfaff, .5));
+            position: relative;
+          }
+          .time-description {
+            margin-top: -1px;
+            font-size: 8px;
+            color: $blue;
+            text: {
+              transform: uppercase;
+            }
+          }
+        }
+      }
+      &:before {
+        position: absolute;
+        bottom: 0;
+        height: $game-small-jackpot-h;
+        left: 0;
+        right: 0;
+        z-index: 3;
+      }
+      .small-jackpot {
+        position: relative;
+        height: $game-small-jackpot-h;
+        .counter-wrapper {
+          position: relative;
+          display: inline-block;
+          margin-top: 7px;
+          height: $game-small-jackpot-h;
+          .currency {
+            float: left;
+            margin-right: 5px;
+            height: $game-small-jackpot-h;
+            background: url("../images/little-flip.png") no-repeat 0 0;
+            &.rub {
+              width: $game-small-jackpot-rub-width;
+              background-position: -250px 0;
+            }
+            &.eur {
+              width: $game-small-jackpot-eur-width;
+              background-position: -285px 0;
+            }
+            &.usd {
+              width: $game-small-jackpot-usd-width;
+              background-position: -266px 0;
+            }
+          }
+          #little-jackpot-counter {
+            float: right;
+            height: $game-small-jackpot-h;
+          }
+        }
+        .jackpot-decription {
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          right: 0;
+          text: {
+            align: center;
+            transform: uppercase;
+          }
+          font: {
+            size: 8px;
+            variant: small-caps;
+          }
+          color: $blue;
+        }
+      }
+    }
+  }
+}

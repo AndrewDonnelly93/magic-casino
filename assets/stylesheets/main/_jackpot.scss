@@ -1,0 +1,96 @@
+$speedometer-width: 558px;
+$speedometer-height: 368px;
+$bg-jackpot-height: 220px;
+$jackpot-box-bg-height: 40px;
+$jackpot-rub-width: 24px;
+$jackpot-eur-width: 26px;
+$jackpot-usd-width: 23px;
+
+.jackpot-section {
+  margin-top: 110px;
+  margin-bottom: 19px;
+  display: inline-block;
+  float: right;
+  width: $aside-width;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+  .aside-header {
+    z-index: 1;
+    .icon {
+      z-index: 3;
+      background: url("../images/sprite/sprite.png") no-repeat -200px 0px;
+      margin-top: 6px;
+    }
+    .aside-shape-left {
+      z-index: 3;
+    }
+    .aside-shape-right {
+      z-index: 3;
+    }
+    .aside-head {
+      z-index: 3;
+    }
+  }
+  .speedometer {
+    z-index: 2;
+    @include size($speedometer-width,$speedometer-height);
+    position: absolute;
+    top: -23px;
+    left: -110px;
+    background: url("../images/speedometr.png") no-repeat 0 0;
+  }
+  .bg-jackpot {
+    @include box-shadow(-1px 2px 4px 0 rgba(#000,.41));
+    @include size($aside-width,$bg-jackpot-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/jackpot-bg.png") no-repeat 0 0;
+  }
+  .jackpot-wrapper {
+    position: relative;
+    z-index: 3;
+    @include size($aside-width,$jackpot-box-bg-height);
+    @include box-shadow(-1px 2px 4px 0 rgba(#000,.41));
+    background: url("../images/jackpot-box-bg.png") no-repeat 0 0;
+    margin: 103px auto 9px;
+  }
+  .counter-wrapper {
+    position: relative;
+    display: inline-block;
+    height: $jackpot-box-bg-height;
+    .currency {
+      float: left;
+      margin-right: 10px;
+      height: $jackpot-box-bg-height;
+      background: url("../images/big-flip.png") no-repeat 0 0;
+      &.rub {
+        width: $jackpot-rub-width;
+        background-position: -301px 0;
+      }
+      &.eur {
+        width: $jackpot-eur-width;
+        background-position: -349px 0;
+      }
+      &.usd {
+        width: $jackpot-usd-width;
+        background-position: -326px 0;
+      }
+    }
+    #jackpot-counter {
+      float: right;
+      height: $jackpot-box-bg-height;
+    }
+  }
+  .cashier-btn {
+    z-index: 10;
+    float: left;
+    @extend %orange-btn;
+  }
+  .gift-btn {
+    z-index: 10;
+    float: right;
+    @extend %green-btn;
+  }
+}

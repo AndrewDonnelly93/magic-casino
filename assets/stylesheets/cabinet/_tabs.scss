@@ -1,0 +1,59 @@
+$tab-width: 233px;
+
+.menu-container {
+  height: $main-menu-list-item-height;
+  width: 100%;
+  .tab {
+    z-index: 3;
+    float: left;
+    position: relative;
+    display: block;
+    @include size($tab-width,$main-menu-list-item-height);
+    @include border-box();
+    &:before {
+      z-index: 2;
+      display: block;
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 0;
+      @include size($main-menu-split-width,$main-menu-list-item-height);
+      background: url("../images/main-menu-split.png") no-repeat 0 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:before {
+        display: none;
+      }
+    }
+    @include linear-gradient(to bottom, rgba(54,54,54,0.83) 0%,rgba(53,53,53,0.91) 3%,
+            rgba(49,49,49,0.91) 15%,rgba(46,46,46,0.91) 18%,rgba(40,40,40,0.91) 31%,rgba(7,7,7,0.9) 77%,
+            rgba(3,3,3,0.9) 97%,rgba(2,2,2,0.91) 100%);
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+    color: $menu-color;
+    line-height: $main-menu-list-item-height + 1;
+    @include text-shadow(0 1px 0 rgba(11, 22, 35,.75));
+    &:hover {
+      color: $base-color;
+      @include  linear-gradient(to bottom, rgba(10,13,16,0.84) 0%,rgba(10,14,17,0.9) 3%,rgba(13,18,20,0.9) 21%,
+              rgba(31,38,41,0.9) 77%,rgba(34,42,46,0.9) 97%,rgba(35,43,47,0.84) 100%);
+    }
+    text: {
+      align: center;
+      decoration: none;
+      transform: uppercase;
+    }
+    &.active {
+      background: url("../images/profile/active-tab.png") no-repeat 0 0;
+      line-height: $main-menu-list-item-height + 3;
+      font: {
+        size: 20px;
+      }
+      color: $blue;
+      @include text-shadow(0 1px 0 rgba(11, 22, 35, 0.75), 0 0 5px rgba(153, 247, 255, 0.25));
+    }
+  }
+}

@@ -1,0 +1,144 @@
+$current-status-box-w: 186px;
+$current-status-box-h: 48px;
+$small-beginner-icon-w: 32px;
+$small-beginner-icon-h: 32px;
+$small-driver-icon-w: 43px;
+$small-driver-icon-h: 42px;
+$small-racer-icon-w: 42px;
+$small-racer-icon-h: 41px;
+$current-beginner-icon-w: 51px;
+$current-beginner-icon-h: 52px;
+$current-racer-icon-w: 68px;
+$current-driver-icon-w: 71px;
+$current-driver-icon-h: 70px;
+$status-line-w: 997px;
+$status-line-h: 100px;
+$status-wrapper-w: 480px;
+$small-status-box-bg: rgb(25, 25, 25);
+$small-status-box-color: #434343;
+$small-status-box-w: 114px;
+$small-status-box-h: 28px;
+
+.status {
+  .status-line {
+    @include size($status-line-w,$status-line-h);
+    position: relative;
+    &:before {
+      @include size($status-line-w,$status-line-h);
+      position: absolute;
+      background: url(../images/popup/status-line.png) no-repeat 0 0;
+      top: 0;
+      left: 0;
+      content: "";
+      z-index: 2;
+    }
+    .status-wrapper {
+      position: relative;
+      z-index: 2;
+      width: $status-wrapper-w;
+      margin: 0 auto;
+    }
+    margin: 0 auto 48px;
+  }
+  .status-box {
+    &:hover {
+      cursor: pointer;
+    }
+    &.current {
+      margin: 26px 0 0 32px;
+      float: left;
+      .user-status {
+        margin-left: 85px;
+        font-size: 18px;
+        text-align: left;
+        line-height: $current-status-box-h + 1;
+      }
+      @include size($current-status-box-w,$current-status-box-h);
+      border: 1px solid rgba(65, 63, 71, .2);
+      @include border-radius(6px);
+      .icon {
+        background: url("../images/status/popup-current-status.png") no-repeat 0 0;
+        top: -5px;
+        left: 0px;
+      }
+      &.beginner {
+        .icon {
+          top: -4px;
+          left: 12px;
+          @include size($current-beginner-icon-w, $current-beginner-icon-h);
+        }
+      }
+      &.racer {
+        .user-status {
+          margin-left: 90px;
+        }
+        .icon {
+          top: -15px;
+          left: 8px;
+          @include size($current-racer-icon-w, $current-racer-icon-w);
+          background-position: 0 -52px;
+        }
+      }
+      &.driver {
+        .user-status {
+          margin-left: 90px;
+        }
+        .icon {
+          top: -20px;
+          left: 9px;
+          @include size($current-driver-icon-w, $current-driver-icon-h);
+          background-position: 0 -120px;
+        }
+      }
+    }
+    &.small {
+      margin-right: 0;
+      margin-top: 36px;
+      @include box-shadow(none);
+      background: rgba($small-status-box-bg,.95);
+      border: 0;
+      float: left;
+      &.right {
+        float: right;
+      }
+      @include size($small-status-box-w,$small-status-box-h);
+      .user-status {
+        @include text-shadow(none);
+        color: $small-status-box-color;
+        font-size: 11px;
+        line-height: $small-status-box-h + 1;
+        margin-left: 55px;
+        text-align: left;
+      }
+      .icon {
+        background: url("../images/status/popup-small-status.png") no-repeat 0 0;
+      }
+      &.beginner {
+        .user-status {
+          margin-left: 48px;
+        }
+        .icon {
+          top: -2px;
+          left: 7px;
+          @include size($small-beginner-icon-w, $small-beginner-icon-w);
+        }
+      }
+      &.racer {
+        .icon {
+          top: -8px;
+          left: 6px;
+          @include size($small-racer-icon-w, $small-racer-icon-h);
+          background-position: 0 -32px;
+        }
+      }
+      &.driver {
+        .icon {
+          top: -9px;
+          left: 6px;
+          @include size($small-driver-icon-w, $small-driver-icon-w);
+          background-position: 0 -73px;
+        }
+      }
+    }
+  }
+}

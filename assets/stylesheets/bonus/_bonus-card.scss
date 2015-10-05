@@ -1,0 +1,106 @@
+$bonus-card-width: 262px;
+$bonus-card-height: 400px;
+$bonus-frame-height: 230px;
+$bonus-img-width: 260px;
+$bonus-img-height: 170px;
+$padding-frame: 15px;
+
+
+.bonus-cards {
+  width: $left-content-width;
+  li {
+    .bonus-description {
+      line-height: 1.7;
+      font: {
+        weight: 600;
+        size: 11px;
+      }
+      text: {
+        align: left;
+      }
+      color: $content-text;
+    }
+    background: $transparent;
+    @include box-shadow(-1px 2px 4px 0 rgba(#000,.55));
+    position: relative;
+    margin-right: 38px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    margin-bottom: 17px;
+    display: inline-block;
+    @include border-box();
+    list-style: none;
+    border: 1px solid $game-border;
+    width: $bonus-card-width;
+    height: $bonus-card-height;
+    a {
+      display: block;
+    }
+    .bonus-img {
+      display: block;
+      @include border-box();
+      width: $bonus-img-width;
+      height: $bonus-img-height;
+    }
+    .frame {
+      position: relative;
+      width: $bonus-card-width - 2;
+      margin: 0 auto;
+      height: $bonus-frame-height;
+      @include border-box();
+      padding-left: $padding-frame;
+      padding-right: $padding-frame;
+      border-bottom: 2px solid $blue;
+    }
+  }
+}
+
+.bonus-header {
+  font: {
+    size: 14px;
+    weight: 600;
+  }
+  text: {
+    transform: uppercase;
+    align: center;
+  }
+  padding-top: 10px;
+  color: $blue;
+  @extend %text-overflow;
+  margin-bottom: 4px;
+}
+
+.get-bonus {
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+  right: 15px;
+  .get-bonus-btn {
+    float: left;
+    @extend %small-green-btn;
+  }
+  .get-more-information {
+    padding-top: 6px;
+    color: $more-link;
+    font: {
+      size: 12px;
+    }
+    text: {
+      decoration: underline;
+    }
+    margin-right: 27px;
+    float: right;
+  }
+  .arrow-nav {
+    position: absolute;
+    right: -5px;
+    @include size($select-game-more-size,$select-game-more-size);
+    background: url(../images/sprite/sprite.png) no-repeat -37px -209px;
+    display: inline-block;
+    top: -2px;
+    &:hover {
+      background-position: -65px -209px;
+    }
+  }
+}

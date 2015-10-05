@@ -1,0 +1,169 @@
+$game-list-item-width: 202px;
+$game-list-item-height: 172px;
+$game-border: rgba(#5d91ba,.22);
+$game-img-width: 200px;
+$game-img-height: 130px;
+$game-frame-height: 40px;
+$game-name-width: 120px;
+$game-hover-line-shadow: rgba(#6bf6ff,.7);
+$game-hover-line-width: 212px;
+$game-hover-line-height: 14px;
+$game-rating-item-width: 5px;
+$game-rating-item-height: 20px;
+
+@keyframes game-rating-list {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.game-list {
+  margin-bottom: 20px;
+  .game-item {
+    text-align: center;
+    background: $transparent;
+    @include box-shadow(-1px 2px 4px 0 rgba(#000,.55));
+    @include size($game-list-item-width,$game-list-item-height);
+    border: 1px solid $game-border;
+    @include border-box();
+    position: relative;
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    .hover-block {
+      display: none;
+      @include size($game-list-item-width,$game-list-item-height);
+      background: $transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .btn-block {
+        .play-btn {
+          line-height: $standard-btn-height + 3;
+          @extend %orange-btn;
+          margin: 31px auto 0;
+        }
+        .practice-btn {
+          @extend %small-green-btn;
+          margin: 14px auto 0;
+        }
+        &.play-btn-only {
+          .play-btn {
+            margin-top: 1/2 * ($game-img-height - $standard-btn-height);
+          }
+        }
+      }
+      .hover-line {
+        position: absolute;
+        bottom: -5px;
+        left: -6px;
+        @include size($game-hover-line-width,$game-hover-line-height);
+        background: url("../images/game-line-hover.png") no-repeat 0 0;
+      }
+    }
+    .game-img {
+      @include size($game-img-width,$game-img-height);
+      display: block;
+      margin: 0 auto;
+    }
+    .game-frame {
+      position: relative;
+      margin: 0 auto;
+      @include size($game-img-width,$game-frame-height);
+      border-bottom: 2px solid $blue;
+      @include border-box();
+      .game-name {
+        display: block;
+        @include size($game-name-width,$game-frame-height);
+        line-height: $game-frame-height + 1;
+        font: {
+          size: 11px;
+          weight: 600;
+        }
+        text-transform: uppercase;
+        @extend %text-overflow;
+        margin: 0 auto;
+        color: $base-color;
+      }
+      .rating {
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+        height: $game-rating-item-height;
+        li {
+          @include border-box();
+          border: none;
+          @include box-shadow(none);
+          display: inline-block;
+          @include size($game-rating-item-width,$game-rating-item-height);
+          margin-right: 1px;
+          background: url("../images/sprite/sprite.png") no-repeat -200px -124px;
+          .active {
+            display: block;
+            @include size($game-rating-item-width,$game-rating-item-height);
+            background: url("../images/sprite/sprite.png") no-repeat -223px -85px;
+            @include animation(game-rating-list,5s,infinite,linear,none);
+          }
+          &:first-child {
+            .active {
+              @include animation-delay(1s);
+            }
+          }
+          &:nth-child(2) {
+            .active {
+              @include animation-delay(2s);
+            }
+          }
+          &:nth-child(3) {
+            .active {
+              @include animation-delay(3s);
+            }
+          }
+          &:nth-child(4) {
+            .active {
+              @include animation-delay(4s);
+            }
+          }
+          &:nth-child(5) {
+            .active {
+              @include animation-delay(5s);
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &:hover {
+      .game-frame {
+        .game-name {
+          color: $orange;
+          font-size: 12px;
+        }
+        .rating {
+          li {
+            .active {
+              margin-top: .4px;
+              background: url("../images/sprite/sprite.png") no-repeat -210px -124px;
+              @include animation-name(none);
+            }
+          }
+        }
+      }
+      .hover-block {
+        display: block;
+      }
+    }
+  }
+
+}

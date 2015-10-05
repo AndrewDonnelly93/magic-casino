@@ -1,0 +1,15 @@
+$profile-status-line-w: 738px;
+
+.cabinet-section {
+  .status {
+    .status-line {
+      width: 100%;
+      margin-bottom: 28px;
+      &:before {
+        left: -19px;
+        width: $profile-status-line-w;
+        background: url("../images/profile/status-line.png") no-repeat 0 0;
+      }
+    }
+  }
+}

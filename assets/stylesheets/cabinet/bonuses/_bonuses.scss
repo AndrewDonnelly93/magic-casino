@@ -1,0 +1,190 @@
+$cabinet-bonus-h: 170px;
+$cabinet-bonus-pic-w: 220px;
+$cabinet-bonus-free-spins-w: 223px;
+$cabinet-bonus-free-spins-h: 163px;
+$cabinet-bonus-deposit-100-w: 209px;
+$cabinet-bonus-deposit-100-h: 164px;
+$cabinet-bonus-no-bonus-w: 195px;
+$cabinet-bonus-no-bonus-h: 149px;
+$cabinet-bonus-right-section-w: 440px;
+$liquidated-w: 100px;
+$cabinet-bonus-time-counter-w: 280px;
+$cabinet-bonus-time-counter-h: 39px;
+
+.cabinet-section.bonuses {
+  padding: 20px 0;
+ .cabinet-bonus {
+   margin: 0 auto 20px;
+   position: relative;
+   @include size($modal-wrapper-width,$cabinet-bonus-h);
+   border: 1px solid $blue;
+   border: 1px solid rgba($blue,.5);
+   background: rgba(#000,.35);
+   @include border-box();
+   &:before {
+     @extend %full-size-pseudo;
+     background: url("../images/diagonal-35.png") repeat 0 0;
+   }
+   &:hover {
+     border: 1px solid $blue;
+     &:before {
+       @include box-shadow(inset 0 0 15px 5px rgb(0, 217, 123));
+       @include box-shadow(inset 0 0 15px 5px rgba(0, 217, 123, 0.85));
+     }
+   }
+   /* Buttons */
+   .bonus-btn {
+     position: absolute;
+     bottom: 19px;
+     right: 20px;
+     z-index: 5;
+   }
+   .activate-btn,
+   .get-bonus-btn {
+     @extend %orange-btn;
+   }
+   .deposit-btn {
+     @extend %green-btn;
+   }
+   /* Bonus pic */
+   .bonus-picture {
+     float: left;
+     margin-right: 20px;
+     @include size($cabinet-bonus-pic-w,$cabinet-bonus-h);
+     position: relative;
+     &:before {
+       position: absolute;
+       display: block;
+       content: "";
+     }
+   }
+   &.free-spins {
+     .bonus-picture {
+       &:before {
+         @include size($cabinet-bonus-free-spins-w,$cabinet-bonus-free-spins-h);
+         top: 6px;
+         left: 0;
+         background: url("../images/profile/free-spins.png") no-repeat 0 0;
+       }
+     }
+   }
+   &.deposit-100 {
+     .bonus-picture {
+       &:before {
+         @include size($cabinet-bonus-deposit-100-w,$cabinet-bonus-deposit-100-h);
+         top: 4px;
+         left: 6px;
+         background: url("../images/profile/deposit-100.png") no-repeat 0 0;
+       }
+     }
+   }
+   &.no-bonus {
+     .bonus-picture {
+       &:before {
+         @include size($cabinet-bonus-no-bonus-w,$cabinet-bonus-no-bonus-h);
+         top: 11px;
+         left: 9px;
+         background: url("../images/profile/no-bonus.png") no-repeat 0 0;
+       }
+     }
+   }
+   /* Right section */
+   .right-section {
+     position: relative;
+     @include size($cabinet-bonus-right-section-w,$cabinet-bonus-h);
+     float: left;
+     text-align: left;
+     padding-top: 15px;
+     @include border-box();
+     .bonus-head {
+       color: $blue;
+       font: {
+         size: 14px;
+         weight: 600;
+       }
+       margin-bottom: 10px;
+     }
+     p {
+       line-height: 1.5;
+       font: {
+         size: 12px;
+         weight: 600;
+       }
+       color: $blue;
+       letter-spacing: -.1px;
+     }
+     /* Time counter */
+     .time-counter {
+       position: absolute;
+       @include size($cabinet-bonus-time-counter-w,$cabinet-bonus-time-counter-h);
+       background: rgba(#000,.5);
+       bottom: 20px;
+       left: 0;
+     }
+     .liquidated {
+       float: left;
+       @include size($liquidated-w,$cabinet-bonus-time-counter-h);
+       line-height: 1.9;
+       margin-left: 6px;
+       font: {
+         size: 10px;
+         weight: 300;
+       }
+       color: $blue;
+     }
+     .counter {
+       float: right;
+       display: block;
+       position: relative;
+       top: 12px;
+       right: 12px;
+       height: $game-counter-h;
+       text-align: center;
+       .count {
+         top: -7px;
+         &:before {
+           display: none;
+         }
+         display: inline-block;
+         height: $game-counter-h;
+         width: $game-counter-count-time-w;
+         margin-right: 21px;
+         &:last-child {
+           margin-right: 0;
+         }
+         position: relative;
+         span {
+           display: block;
+           font: {
+             family: "Russo One", sans-serif;
+             weight: 400;
+             size: 18px;
+           }
+           color: $base-color;
+           @include text-shadow(0 2px 0 rgb(3, 18, 30),
+                   0 -2px 2px rgba(#1bfaff, .5),
+                   0 2px 2px rgba(#1bfaff, .5),
+                   -2px 0 2px rgba(#1bfaff, .5),
+                   2px -0 2px rgba(#1bfaff, .5));
+           position: relative;
+         }
+         .time-description {
+           margin-top: -1px;
+           font-size: 8px;
+           color: $blue;
+           font-weight: 300;
+           text: {
+             transform: uppercase;
+           }
+         }
+       }
+     }
+   }
+   /* No bonus */
+   &.no-bonus {
+     .right-section {
+       padding-top: 35px;
+     }
+   }
+ }
+}

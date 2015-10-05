@@ -1,0 +1,33 @@
+$select-game-more-size: 28px;
+
+.popup.select-game {
+  .popup-main-head {
+    margin-bottom: 106px;
+  }
+  .popup-head {
+    margin-bottom: 29px;
+  }
+  .game-list {
+    margin: 0 auto 44px;
+  }
+  .popup-description {
+    text-decoration: underline;
+    position: absolute;
+    right: 20px;
+    bottom: 43px;
+    .more {
+      position: relative;
+      top: 11px;
+      left: 5px;
+      margin-left: 1px;
+      @include size($select-game-more-size,$select-game-more-size);
+      background: url(../images/sprite/sprite.png) no-repeat -37px -209px;
+      display: inline-block;
+    }
+    &:hover {
+      .more {
+        background-position: -65px -209px;
+      }
+    }
+  }
+}

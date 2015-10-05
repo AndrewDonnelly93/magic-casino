@@ -1,0 +1,15 @@
+$sign-up-block-height: 120px;
+
+.sign-up-block {
+  height: $sign-up-block-height;
+  background: url("../images/sign-up-banner.png") no-repeat 0 0;
+  text-align: right;
+  margin-top: 41px;
+  margin-bottom: 40px;
+  .sign-up-btn {
+    @extend %big-orange-btn;
+    display: inline-block;
+    margin-top: 34px;
+    margin-right: 60px;
+  }
+}

@@ -1,0 +1,223 @@
+$game-category-list-item-height: 50px;
+$game-category-list-bg: rgba(#000,.55);
+$game-category-link-height: 35px;
+$popular-width: 28px;
+$popular-height: 28px;
+$new-width: 33px;
+$new-height: 23px;
+$slots-width: 38px;
+$slots-height: 23px;
+$videopokers-width: 35px;
+$videopokers-height: 28px;
+$table-width: 28px;
+$table-height: 28px;
+$others-width: 28px;
+$others-height: 28px;
+$favorites-width: 26px;
+$favorites-height: 23px;
+$game-category-list-item-color: rgb(213,252,255);
+$select-shape-width: 28px;
+$select-shape-height: 38px;
+
+.game-category {
+  position: relative;
+  z-index: 12;
+  margin: 0 auto;
+  width: 100%;
+  display: table;
+  .game-category-list {
+    display: table;
+    text-align: center;
+    width: 100%;
+    @include box-shadow(-2px 3px 6px 0 rgba(#000,.3));
+    li {
+      display: table-cell;
+      height: $game-category-list-item-height;
+      @include border-box();
+      background: $game-category-list-bg;
+      i {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 3px;
+        position: relative;
+        background: url("../images/sprite/sprite.png") no-repeat 0 0;
+      }
+      &.popular {
+        i {
+          @include size($popular-width,$popular-height);
+          background-position: 0px -152px;
+        }
+      }
+      &.new {
+        i {
+          margin-top: 4px;
+          @include size($new-width,$new-height);
+          background-position: -137px -152px;
+        }
+      }
+      &.slots {
+        i {
+          margin-top: 6px;
+          @include size($slots-width,$slots-height);
+          background-position: -87px -88px;
+        }
+      }
+      &.videopokers {
+        i {
+          @include size($videopokers-width,$videopokers-height);
+          background-position: -40px -55px;
+        }
+      }
+      &.table {
+        i {
+          @include size($table-width,$table-height);
+          background-position: -167px -37px;
+        }
+      }
+      &.others {
+        i {
+          @include size($others-width,$others-height);
+           background-position: -167px -70px;
+        }
+      }
+      &.favorites {
+        i {
+          margin-top: 5px;
+          @include size($favorites-width,$favorites-height);
+          background-position: -200px -29px;
+        }
+      }
+      a {
+        @include border-box();
+        height: $game-category-link-height;
+        line-height: $game-category-link-height - 1;
+        border: 1px solid transparent;
+        display: inline-block;
+        padding-left: 4px;
+        padding-right: 8px;
+        vertical-align: top;
+        margin-top: 7.5px;
+        font: {
+          weight: 600;
+        }
+        text: {
+          transform: uppercase;
+          decoration: none;
+          align: center;
+        }
+        color: $game-category-list-item-color;
+        span {
+          @include text-shadow(0 1px 0 #0b1623);
+          margin-left: 8px;
+          position: relative;
+        }
+      }
+      &.active {
+        a {
+          @include border-radius(2px);
+          border: 1px solid $blue;
+          span {
+            position: relative;
+            &:before {
+              display: block;
+              background: url("../images/sprite/sprite.png") no-repeat -62px 0px;
+              position: absolute;
+              content: "";
+              top: -12.5px;
+              right: -13px;
+              @include size($select-shape-width,$select-shape-height);
+            }
+          }
+        }
+        &:hover {
+          &.popular {
+            i {
+              background-position: 0px -152px;
+            }
+          }
+          &.new {
+            i {
+              background-position: -137px -152px;
+            }
+          }
+          &.slots {
+            i {
+              background-position: -87px -88px;
+            }
+          }
+          &.videopokers {
+            i {
+              left: 0;
+              background-position: -40px -55px;
+            }
+          }
+          &.table {
+            i {
+              background-position: -167px -37px;
+            }
+          }
+          &.others {
+            i {
+               background-position: -167px -70px;
+            }
+          }
+          &.favorites {
+            i {
+              margin-top: 5px;
+              background-position: -200px -29px;
+            }
+          }
+          a {
+            @include text-shadow(0 1px 0 #0b1623);
+            color: $game-category-list-item-color;
+          }
+        }
+      }
+      &:hover {
+        &.popular {
+          i {
+            background-position: -167px -103px;
+          }
+        }
+        &.new {
+          i {
+            background-position: -99px -152px;
+          }
+        }
+        &.slots {
+          i {
+            background-position: -44px -88px;
+          }
+        }
+        &.videopokers {
+          i {
+            left: 1px;
+            background-position: 0px -55px;
+          }
+        }
+        &.table {
+          i {
+            background-position: -66px -152px;
+          }
+        }
+        &.others {
+          i {
+            background-position: -33px -152px;
+          }
+        }
+        &.favorites {
+          i {
+            margin-top: 6px;
+            background-position: -200px -57px;
+          }
+        }
+        a {
+          span {
+            @include text-shadow(none);
+          }
+          color: $orange;
+        }
+      }
+    }
+  }
+}

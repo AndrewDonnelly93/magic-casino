@@ -1,0 +1,38 @@
+
+
+.popup.out-of-game {
+  .popup-main-head {
+    margin-bottom: 106px;
+  }
+  .popup-head {
+    margin-bottom: 29px;
+  }
+  .game-list {
+    margin: 0 auto 44px;
+  }
+  .btn-container {
+    margin-top: 42px;
+  }
+  .return-btn {
+    @include border-box();
+    padding-left: 15px;
+    span {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 2px;
+        @include size($return-arrow-w,$return-arrow-h);
+        background: url(../images/sprite/sprite.png) no-repeat -40px -180px;
+      }
+    }
+    display: inline-block;
+    margin-right: 20px;
+    @extend %orange-btn;
+  }
+  .to-lobby-btn {
+    display: inline-block;
+    @extend %gray-btn;
+  }
+}

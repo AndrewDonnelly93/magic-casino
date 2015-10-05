@@ -1,0 +1,112 @@
+$selected-lang-width: 24px;
+$selected-lang-height: 15px;
+$languages-box-width: 58px;
+$languages-box-height: 25px;
+$lang-arrow-width: 9px;
+$lang-arrow-height: 5px;
+$selected-lang-list-bg: rgba(#000,.75);
+$selected-lang-list-width: 300px;
+$selected-lang-list-item-width: 140px;
+$selected-lang-list-item-height: 54px;
+$lang-width: 26px;
+$lang-height: 17px;
+$select-lang-color: rgb(100, 155, 179);
+
+.languages {
+  float: right;
+  @include border-box();
+  border: 1px solid $blue-border;
+  @include size($languages-box-width,$languages-box-height);
+  &:hover {
+    cursor: pointer;
+  }
+  .selected-lang {
+    float: left;
+    @include size($selected-lang-width,$selected-lang-height);
+    margin-left: 8px;
+    margin-top: 4px;
+    background: url("../images/language.png") no-repeat 0 0;
+    &.rus {
+      background-position: 0 -30px;
+    }
+    &.es {
+      background-position: 0 -15px;
+    }
+  }
+  .arrow {
+    float: left;
+    margin-left: 8px;
+    margin-top: 11px;
+    @include size($lang-arrow-width,$lang-arrow-height);
+    background: url("../images/sprite/sprite.png") no-repeat -220px -139px;
+  }
+  &.active {
+    border-top: 1px solid $blue-border;
+    border-left: 1px solid $blue-border;
+    border-right: 1px solid $blue-border;
+    border-bottom: none;
+    .arrow {
+      background-position: -215px -163px;
+    }
+  }
+}
+
+.selected-lang-list {
+  position: absolute;
+  z-index: 12;
+  background: $selected-lang-list-bg;
+  @include border-box();
+  @include border-radius(2px);
+  border: 1px solid $blue-border;
+  width: $selected-lang-list-width;
+  background: $selected-lang-list-bg;
+  right: 0;
+  top: 45px;
+  li {
+    display: inline-block;
+    @include size(49%,$selected-lang-list-item-height);
+    a {
+      text-align: left;
+      @include size(100%,$selected-lang-list-item-height);
+      display: block;
+      text: {
+        decoration: none;
+        transform: uppercase;
+      }
+      font: {
+        weight: 600;
+      }
+      i {
+        display: inline-block;
+        @include size($lang-width,$lang-height);
+        background: url("../images/language-border.png") no-repeat 0 0;
+        margin-top: 19px;
+        margin-left: 20px;
+      }
+      span {
+        margin-top: 20px;
+        margin-left: 8px;
+        vertical-align: top;
+        display: inline-block;
+        color: $select-lang-color;
+      }
+      &.rus {
+        i {
+          background-position: 0 -34px;
+        }
+      }
+      &.es {
+        i {
+          background-position: 0 -17px;
+        }
+      }
+    }
+    &:hover {
+      a {
+        span {
+          color: $orange;
+        }
+      }
+    }
+  }
+}

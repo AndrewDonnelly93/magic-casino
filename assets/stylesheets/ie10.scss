@@ -1,0 +1,28 @@
+$main-menu-list-item-height: 43px;
+$blue: #01e7fb;
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-menu {
+    .main-menu-list {
+      li.active {
+        a {
+          line-height: $main-menu-list-item-height;
+          top: -1px;
+        }
+      }
+    }
+  }
+  .prizes-table {
+    li {
+      .position {
+        border: 1px solid $blue;
+      }
+    }
+  }
+
+  .result-table {
+    thead {
+        border: 1px solid $blue;
+    }
+  }
+}

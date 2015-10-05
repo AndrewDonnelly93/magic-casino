@@ -1,0 +1,340 @@
+$owl-carousel-w: 645px;
+
+.registration-block {
+  .reg-btn {
+    behavior: url(PIE.htc);
+  }
+  .sign-in-btn {
+    behavior: url(PIE.htc);
+  }
+}
+
+.selected-lang-list {
+  background: url("../images/old-ie/select-language.png") repeat 0 0;
+  behavior: url(PIE.htc);
+}
+
+.game-category {
+  .game-category-list {
+    behavior: url(PIE.htc);
+    li {
+      background: url("../images/old-ie/navigation.png") repeat-x 0 0;
+      a {
+        &.active {
+          behavior: url(PIE.htc);
+        }
+      }
+    }
+  }
+}
+
+input.small-field {
+  behavior: url(PIE.htc);
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+}
+
+.winners-list {
+  li {
+    .img-container {
+      .hover-block {
+        background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+      }
+    }
+  }
+}
+
+.jackpot-section {
+  .bg-jackpot {
+    behavior: url(PIE.htc);
+  }
+  .jackpot-wrapper {
+    behavior: url(PIE.htc);
+  }
+}
+
+.game-list {
+  text-align: center;
+  .game-item {
+    behavior: url(PIE.htc);
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+    .hover-block {
+      background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+    }
+  }
+}
+
+.aside-block {
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+  behavior: url(PIE.htc);
+  &:before {
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=22);
+  }
+}
+
+.main-menu {
+  .main-menu-list {
+    li.active {
+      top: -1px;
+    }
+  }
+}
+
+.header-reg {
+  .user-info {
+    .status-box {
+      behavior: url(PIE.htc);
+      background: url("../images/old-ie/status-box.png") no-repeat 0 0;
+    }
+  }
+}
+
+.owl-carousel {
+  width: $owl-carousel-w !important;
+  margin: 0 auto !important;
+  top: 5px !important;
+  left: 0 !important;
+  .owl-item {
+    top: 0px !important;
+    height: 252px !important;
+  }
+}
+
+.promo-block {
+  height: 320px !important;
+  background-repeat: repeat-y !important;
+}
+
+.owl-nav {
+  top: 115px !important;
+  left: -32px !important;
+  .owl-prev {
+    left: 0 !important;
+  }
+  .owl-next {
+    right: -684px !important;
+  }
+}
+
+.tourney-card {
+  background: url("../images/old-ie/rgba-35.png") repeat 0 0;
+  .left-section {
+    .tourn-img-container {
+      .small-grad {
+        background: #00FE48;
+      }
+    }
+  }
+  .center-section {
+    .tourney-games-list {
+      li:hover {
+          background: url("../images/old-ie/rgba-38.png") repeat 0 0;
+        }
+    }
+  }
+  .right-section {
+    .tourney-leaders-list {
+      li {
+        behavior: url(PIE.htc);
+        .bg {
+          behavior: url(PIE.htc);
+          background: url("../images/old-ie/rgba-38.png") repeat 0 0;
+        }
+      }
+    }
+  }
+}
+
+%tourney-card-section {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0;
+}
+
+.window-overlay {
+  background: url("../images/old-ie/rgba-75.png") repeat 0 0;
+}
+
+.popup {
+  form {
+    &:after {
+      background: url("../images/old-ie/rgba-35.png") repeat 0 0;
+    }
+  }
+}
+
+.characteristics {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0;
+  .characteristics-list {
+    td {
+      &.key {
+        .bg {
+          behavior: url(PIE.htc);
+          background: url("../images/old-ie/rgba-38.png") repeat 0 0;
+        }
+      }
+      &.value {
+        background: url("../images/old-ie/rgba-25.png") repeat 0 0;
+      }
+    }
+  }
+}
+
+.left-content.inner-bonus {
+  .bonus-wrapper {
+    .bonus-pic {
+      background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+    }
+  }
+}
+
+.content-box {
+  background:  url("../images/diagonal-35.png") repeat 0 0;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      background: url("../images/old-ie/rgba-35.png") repeat 0 0;
+    }
+}
+
+.content-container {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0;
+}
+
+.prizes-table {
+  &:before {
+    behavior: url(PIE.htc);
+  }
+  li {
+    &:nth-child(even) {
+      background: url("../images/old-ie/rgba-25.png") repeat 0 0;
+    }
+  }
+}
+
+.leaders-tables {
+  behavior: url(PIE.htc);
+  .bg {
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  }
+  .best-players-table {
+    tr {
+        background: url("../images/old-ie/rgba-38.png") repeat 0 0;
+    }
+  }
+}
+
+.game-container {
+  behavior: url(PIE.htc);
+  .left-column {
+    .game-of-month {
+      behavior: url(PIE.htc);
+    }
+  }
+}
+
+.game-mode {
+  .user-info {
+    .status-box {
+      background: url("../images/old-ie/rgba-15.png") repeat 0 0;
+      .progress-bar {
+        li {
+          filter:progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+          &.active {
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+            span {
+              behavior: url(PIE.htc);
+            }
+          }
+        }
+      }
+    }
+    .balance-drifts {
+      background: url("../images/old-ie/rgba-15.png") repeat 0 0;
+    }
+    .cashback {
+      background: url("../images/old-ie/rgba-15.png") repeat 0 0;
+    }
+  }
+}
+
+.game-container {
+  &.demo {
+    .select-greeting-bonus {
+     .bonus-image {
+       behavior: url(PIE.htc);
+     }
+    }
+  }
+  .leaders-table {
+    li {
+      background: url("../images/old-ie/rgba-15.png") repeat 0 0;
+    }
+  }
+}
+
+.game-mode {
+  .aside-block.tournaments {
+    .header {
+      background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+    }
+  }
+}
+
+.cabinet-section {
+  .contact-box {
+    .mail, .phone {
+      behavior: url(PIE.htc);
+    }
+  }
+  .profile-info-lines {
+    .profile-info-line {
+      background: url("../images/old-ie/rgba-35.png") repeat 0 0;
+    }
+  }
+  .exchange-block {
+    .balance-box {
+
+      .big-frame {
+        behavior: url(PIE.htc);
+      }
+      .content {
+        behavior: url(PIE.htc);
+      }
+    }
+    .central-section {
+      .content {
+        behavior: url(PIE.htc);
+      }
+      .big-frame {
+        behavior: url(PIE.htc);
+      }
+    }
+  }
+  &.bonuses {
+    .cabinet-bonus {
+      behavior: url(PIE.htc);
+      background: url("../images/old-ie/rgba-35.png") repeat 0 0;
+      .right-section {
+        .time-counter {
+          background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+        }
+      }
+    }
+  }
+}
+
+div.fancy-select.birth-date ul.options {
+  background: url("../images/old-ie/rgba-85.png") repeat 0 0;
+  li {
+    &.hover {
+      &:before {
+        background: url("../images/old-ie/rgba-90.png") repeat 0 0;
+      }
+    }
+  }
+}

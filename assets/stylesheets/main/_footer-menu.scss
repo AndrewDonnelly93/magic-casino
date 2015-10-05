@@ -1,0 +1,21 @@
+.footer-menu {
+  li {
+    display: block;
+    float: left;
+    list-style: none;
+    margin-right: 37px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      display: block;
+      text:
+      {
+        decoration: none;
+        align: left;
+      }
+      color: $light-blue;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,174 @@
+$game-mode-big-btn-h: 47px;
+$game-mode-small-btn-h: 31px;
+$get-now-btn-w: 98px;
+$get-now-btn-h: 27px;
+$game-mode-text-shadow: #00D8FF;
+$refresh-icon-w: 16px;
+$refresh-icon-h: 18px;
+$help-icon-w: 15px;
+$help-icon-h: 13px;
+
+%game-mode-big-btn {
+  @include size($column-wrapper-w,$game-mode-big-btn-h);
+  line-height: $game-mode-big-btn-h + 2;
+  position: relative;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 16px;
+    weight: 400;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+  &:hover {
+    background-position: 0 -49px;
+  }
+  display: block;
+}
+
+%game-mode-small-btn {
+  @include size($column-wrapper-w,$game-mode-small-btn-h);
+  line-height: $game-mode-small-btn-h + 1;
+  position: relative;
+  display: block;
+  font: {
+    family: "Jura", sans-serif;
+    size: 14px;
+    weight: 400;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: #000;
+  &:hover {
+    background-position: 0 -33px;
+  }
+}
+
+%button-with-image {
+  @include border-box();
+  padding-right: 23px;
+  line-height: $game-mode-small-btn-h + 2;
+  span {
+    position: relative;
+    &:before {
+      top: -5px;
+      right: -30px;
+      position: absolute;
+      content: "";
+      display: block;
+    }
+  }
+}
+
+.game-mode {
+  .cashier-btn {
+    @extend %game-mode-big-btn;
+    background: url("../images/buttons/orange-btn-170x47.png") no-repeat 0 0;
+    margin-bottom: 20px;
+  }
+  .games-btn {
+    @include text-shadow(1px 0 0 rgba($game-mode-text-shadow,.75));
+    @extend %game-mode-small-btn;
+    background: url("../images/buttons/blue-btn-170x31.png") no-repeat 0 0;
+    margin-bottom: 20px;
+  }
+  .exit-btn {
+    @include text-shadow(1px 0 0 rgba($game-mode-text-shadow,.5));
+    @extend %game-mode-small-btn;
+    background: url("../images/buttons/exit-btn.png") no-repeat 0 0;
+  }
+  .gift-btn {
+    @extend %game-mode-big-btn;
+    background: url("../images/buttons/gift-btn.png") no-repeat 0 0;
+  }
+  .refresh-btn {
+    @extend %game-mode-small-btn;
+    @extend %button-with-image;
+    padding-right: 25px;
+    @include text-shadow(1px 0 0 rgba($game-mode-text-shadow,.75));
+    margin-bottom: 4px;
+    background: url("../images/buttons/refresh-btn.png") no-repeat 0 0;
+    span {
+      &:before {
+        @include size($refresh-icon-w,$refresh-icon-h);
+        top: -2px;
+        right: -25px;
+        background: url(../images/game-mode/sprite/sprite.png) no-repeat -44px 0;
+      }
+    }
+  }
+  .help-btn {
+    @extend %game-mode-small-btn;
+    @extend %button-with-image;
+    line-height: $game-mode-small-btn-h + 3;
+    @include text-shadow(1px 0 0 rgba($game-mode-text-shadow,.75));
+    margin-bottom: 10px;
+    background: url("../images/buttons/help-btn.png") no-repeat 0 0;
+    span {
+      &:before {
+        @include size($help-icon-w,$help-icon-h);
+        top: 0;
+        right: -23px;
+        background: url(../images/game-mode/sprite/sprite.png) no-repeat -18px -44px;
+      }
+    }
+  }
+  .sign-up-btn {
+    @extend %game-mode-big-btn;
+    background: url("../images/buttons/sign-up-btn.png") no-repeat 0 0;
+    line-height: $game-mode-big-btn-h + 4;
+    margin-bottom: 18px;
+  }
+  .real-money-btn {
+    @extend %game-mode-big-btn;
+    background: url("../images/buttons/green-btn-170x47.png") no-repeat 0 0;
+    margin-bottom: 20px;
+  }
+  .get-now-btn {
+    @include size($get-now-btn-w,$get-now-btn-h);
+    background: url("../images/buttons/get-now-btn.png") no-repeat 0 0;
+    display: inline-block;
+    line-height: $get-now-btn-h + 3;
+    color: $standard-btn-color;
+    font: {
+      family: "Russo One", sans-serif;
+      size: 11px;
+      weight: 400;
+    }
+    text: {
+      transform: uppercase;
+      decoration: none;
+      align: center;
+    }
+    &:hover {
+      background-position: 0 -29px;
+    }
+  }
+}
+
+.game-container.demo {
+  .help-btn {
+    padding-right: 0;
+    span {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &.not-auth {
+    .help-btn {
+      padding-right: 23px;
+      span {
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+}

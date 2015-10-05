@@ -1,0 +1,432 @@
+$tourney-card-section-w: 280px;
+$tourn-img-container-w: 280px;
+$tourn-img-container-h: 182px;
+$tourney-card-big-grad-bg: #00F4FD;
+$tourney-card-img-w: 275px;
+$tourney-card-img-h: 177px;
+$tourn-img-bg-w: 292px;
+$tourn-img-bg-h: 194px;
+$super-tourney-h: 20px;
+$period-h: 40px;
+$super-tourney-color: rgb(249, 82, 1);
+$tourney-card-section-h: 70px;
+$tourn-count-w: 50px;
+$tourn-center-section-w: 220px;
+$tourney-games-list-item-h: 30px;
+$tourney-medals-h: 116px;
+$tourney-leaders-list-item-h: 20px;
+$tourney-current-user-color: rgb(255, 84, 0);
+$tourney-now-label-size: 77px;
+
+%green-header {
+  color: $light-green;
+  font: {
+    size: 14px;
+    weight: 600;
+  }
+  text-transform: uppercase;
+  @include border-box();
+}
+
+%tourney-card-section {
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background: rgba(#000,.25);
+  height: $tourney-card-section-h;
+  position: relative;
+  @include border-box();
+}
+
+.tourney-card {
+  padding: 18px 20px;
+  @include border-box();
+  position: relative;
+  background: rgba(#000,.35);
+  &:before {
+    @extend %full-size-pseudo;
+    background: url("../images/diagonal-35.png") repeat 0 0;
+  }
+  .hover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &:hover {
+   .hover-bg {
+      border: 1px solid $blue;
+    }
+  }
+  &.super-tournament {
+    .bg {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      @include box-shadow(inset 0 0 15px 5px rgba(0, 217, 123, 0.75));
+      @include linear-gradient(to bottom, rgba(255, 70, 0, 0.75) 0%, rgba(255, 69, 0, 0.75) 5%, rgba(253, 61, 0, 0.7) 11%,
+              rgba(253, 60, 0, 0.69) 12%, rgba(189, 42, 0, 0.59) 22%, rgba(84, 13, 0, 0.45) 35%, rgba(60, 6, 0, 0.43) 38%,
+              rgba(7, 2, 0, 0.38) 46%, rgba(0, 0, 0, 0.38) 50%, rgba(0, 0, 0, 0.38) 54%, rgba(0, 0, 0, 0.4) 58%,
+              rgba(0, 0, 0, 0.7) 86%, rgba(0, 0, 0, 0.75) 94%, rgba(0, 0, 0, 0.75) 100%);
+    }
+  }
+  .left-section {
+    width: $tourney-card-section-w;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    .tourn-img-container {
+      padding-top: 2px;
+      position: relative;
+      @include border-box();
+      @include size($tourn-img-container-w,$tourn-img-container-h);
+      margin-bottom: 9px;
+      .big-grad {
+        @extend %big-img-grad;
+        @include size($tourn-img-container-w,$tourn-img-container-h);
+      }
+      .small-grad {
+        @include size($tourn-img-container-w - 2,$tourn-img-container-h - 2);
+        @extend %small-img-grad;
+      }
+      .img-shadow {
+        @extend %img-shadow;
+        @include size($tourney-card-img-w,$tourney-card-img-h);
+        z-index: 4;
+        .tourn-img {
+          @include size($tourney-card-img-w,$tourney-card-img-h);
+        }
+      }
+    }
+    .tourn-info {
+      position: absolute;
+      width: $tourney-card-img-w;
+      left: 0;
+      bottom: 3px;
+      .super-tourney {
+        margin: 0 auto 2px;
+        @include size($tourney-card-img-w,$super-tourney-h);
+        color: $super-tourney-color;
+        font: {
+          size: 18px;
+          weight: 600;
+        }
+        position: relative;
+        &:before {
+          @extend %full-size-pseudo;
+          background: url("../images/lines-15.png") repeat 0 0;
+        }
+        @include  linear-gradient(to right, rgba(0,62,61,0.5) 0%,rgba(0,51,50,0.52) 6%,rgba(0,45,44,0.53) 8%,
+                rgba(0,20,20,0.59) 16%,rgba(0,14,14,0.62) 20%,rgba(0,6,6,0.66) 26%,rgba(0,4,4,0.69) 31%,
+                rgba(0,0,0,0.74) 43%,rgba(0,0,0,0.75) 45%,rgba(0,0,0,0.75) 55%,rgba(0,0,0,0.74) 57%,rgba(0,2,2,0.72) 62%,
+                rgba(0,7,7,0.63) 76%,rgba(0,20,20,0.57) 85%,rgba(0,30,29,0.55) 88%,rgba(0,52,51,0.52) 95%,
+                rgba(0,62,61,0.5) 100%);
+        line-height: $super-tourney-h + 1;
+        text-transform: uppercase;
+      }
+      .period {
+        position: relative;
+        color: #000;
+        margin: 0 auto;
+        @include size($tourney-card-img-w,$period-h);
+        font: {
+          size: 24px;
+          weight: 600;
+        }
+        @include linear-gradient(to right, rgba(0,62,61,0.5) 0%,rgba(0,81,68,0.53) 4%,rgba(0,86,70,0.54) 5%,
+                rgba(0,130,84,0.6) 11%,rgba(0,166,96,0.67) 16%,rgba(0,200,109,0.81) 27%,rgba(0,203,110,0.82) 28%,
+                rgba(0,222,116,0.92) 36%,rgba(0,226,118,0.94) 38%,rgba(0,232,120,0.96) 41%,rgba(0,237,121,1) 47%,
+                rgba(0,238,121,1) 48%,rgba(0,236,121,1) 53%,rgba(0,235,121,0.98) 56%,rgba(0,227,118,0.94) 62%,
+                rgba(0,208,112,0.84) 71%,rgba(0,205,111,0.83) 72%,rgba(0,177,101,0.71) 81%,rgba(0,162,95,0.65) 85%,
+                rgba(0,139,88,0.61) 88%,rgba(0,94,73,0.54) 94%,rgba(0,86,70,0.53) 95%,rgba(0,63,61,0.5) 100%);
+        line-height: $period-h + 1;
+        &:before {
+          @extend %full-size-pseudo;
+          background: url("../images/lines-15.png") repeat 0 0;
+        }
+      }
+      text-transform: uppercase;
+    }
+    .prize-fund {
+      @extend %tourney-card-section;
+      .prize-fund-head {
+        @extend %green-header;
+        margin-bottom: 7px;
+      }
+      .prize-fund-count {
+        font: {
+          family: "Russo One", sans-serif;
+          weight: 600;
+          size: 30px;
+        }
+        color: $blue;
+        letter-spacing: 2px;
+        span {
+          margin-right: 3px;
+        }
+        .rub {
+          position: relative;
+          &:before {
+            font-size: 14px;
+            position: absolute;
+            top: 11px;
+            left: 7px;
+            content: "_";
+          }
+        }
+      }
+      margin-bottom: 4px;
+    }
+      .counter {
+        @extend %tourney-card-section;
+        .until-the-end {
+          @extend %green-header;
+          margin-bottom: 4px;
+        }
+        .count {
+          display: inline-block;
+          width: $tourn-count-w;
+          margin-top: 1px;
+          margin-right: 16px;
+          &:last-child {
+            margin-right: 0;
+          }
+          position: relative;
+          span {
+            display: block;
+            font: {
+              family: "Russo One", sans-serif;
+              weight: 600;
+              size: 24px;
+            }
+            color: $base-color;
+            @include text-shadow(0 2px 0 rgb(3, 18, 30),
+                    0 -2px 2px rgba(#1bfaff,.5),
+                    0 2px 2px rgba(#1bfaff,.5),
+                    -2px 0 2px rgba(#1bfaff,.5),
+                    2px -0 2px rgba(#1bfaff,.5));
+            position: relative;
+          }
+          .time-description {
+            position: relative;
+            top: -2px;
+            font-size: 9px;
+            color: $blue;
+            text: {
+              transform: uppercase;
+            }
+          }
+        }
+        margin-bottom: 17px;
+      }
+      .tourn-date {
+        position: relative;
+        color: $blue;
+        text-align: center;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        .day-of-week {
+          color: $light-green;
+        }
+      }
+    }
+  .center-section {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    width: $tourn-center-section-w;
+    @include border-box();
+    text-align: left;
+    .tournament-name {
+      padding-left: 13px;
+      padding-right: 13px;
+      position: relative;
+      color: $blue;
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+      text:
+      {
+        transform: uppercase;
+        decoration: underline;
+      }
+      margin-bottom: 26px;
+      display: block;
+    }
+    .tourney-games {
+      padding-left: 13px;
+      padding-right: 13px;
+      position: relative;
+      color: $light-green;
+      font: {
+        size: 14px;
+        weight: 600;
+      }
+      text: {
+        transform: uppercase;
+      }
+      margin-bottom: 12px;
+    }
+    .tourney-games-list {
+      position: relative;
+      list-style: none;
+      max-height: $tourney-games-list-item-h * 10;
+      overflow: hidden;
+      li {
+        @include size($tourn-center-section-w,$tourney-games-list-item-h);
+        @include border-box();
+        display: block;
+        &:hover {
+          background: rgba(#000,.38);
+        }
+        a {
+          padding-left: 13px;
+          padding-right: 13px;
+          display: block;
+          @include size($tourn-center-section-w,$tourney-games-list-item-h);
+          line-height: $tourney-games-list-item-h + 1;
+          @extend %text-overflow;
+          @include border-box();
+          color: $blue;
+          font-size: 12px;
+          text: {
+            decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .right-section {
+    position: relative;
+    float: left;
+    width: $tourney-card-section-w;
+    .medals {
+      position: relative;
+      @include size($tourney-card-section-w,$tourney-medals-h);
+      background: url("../images/medals.png") no-repeat 0 0;
+      margin-bottom: 26px;
+      .fund {
+        position: absolute;
+        bottom: -11px;
+        font: {
+          size: 12px;
+          weight: 600;
+        }
+        color: $blue;
+        @extend %text-overflow;
+        @include border-box();
+        &.first-place {
+          left: 95px;
+          right: 82px;
+          padding: 0 3px;
+          text-align: center;
+        }
+        &.second-place {
+          left: 0;
+          right: 186px;
+          text-align: right;
+        }
+        &.third-place {
+          right: 0;
+          left: 196px;
+          text-align: left;
+        }
+      }
+    }
+    .tourney-leaders-list {
+      position: relative;
+      list-style: none;
+      li {
+        width: 100%;
+        @include border-box();
+        padding-left: 10px;
+        margin-bottom: 10px;
+        padding-right: 15px;
+        height: $tourney-leaders-list-item-h;
+        line-height: $tourney-leaders-list-item-h - 2;
+        @include box-shadow(0 0 3px 1px rgba(53, 243, 255, 0.5));
+        border: 1px solid $blue;
+        position: relative;
+        @include transition-duration(1s);
+        .rank {
+          display: none;
+        }
+        .score {
+          display: none;
+        }
+        color: $light-green;
+        font-size: 12px;
+        span {
+          position: relative;
+          z-index: 2;
+          @extend %text-overflow;
+        }
+        &:first-child {
+          width: 280px;
+        }
+        &:nth-child(2) {
+          width: 250px;
+        }
+        &:nth-child(3) {
+          width: 215px;
+        }
+        &:nth-child(4) {
+          width: 130px;
+        }
+        &:last-child {
+          width: 100px;
+        }
+        .bg {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          bottom: 2px;
+          right: 2px;
+          background: rgba(#000, .38);
+          @include box-shadow(inset 0 0 7px 2px rgba(0, 255, 144, 0.75));
+        }
+        &.current-user {
+          color: $tourney-current-user-color;
+          font-weight: bold;
+          .bg {
+            @include box-shadow(inset 0 0 7px 2px rgba($blue, 0.75));
+          }
+        }
+      }
+    }
+    .tourney-leaders-list-head {
+      @extend %green-header;
+      margin-bottom: 17px;
+    }
+  }
+  .more-btn {
+    @extend %small-green-btn;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+  }
+  .now-label {
+    position: absolute;
+    top: -2px;
+    right: -1px;
+    @include size($tourney-now-label-size,$tourney-now-label-size);
+    background: url("../images/now-label.png") no-repeat 0 0;
+  }
+  margin-bottom: 20px;
+  list-style: none;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:hover {
+    .center-section {
+      .tournament-name {
+        color: $light-green;
+      }
+    }
+  }
+}

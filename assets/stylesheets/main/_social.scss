@@ -1,0 +1,62 @@
+$social-width: 30px;
+$social-height: 30px;
+
+.sign-in-container {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.social-block {
+  display: inline-block;
+  margin-right: 76px;
+  margin-top: 15px;
+  .social-auth {
+    float: left;
+    margin-top: 12px;
+    font:
+    {
+      weight: 400;
+      size: 14px;
+    }
+    text-transform: uppercase;
+    color: $blue;
+
+  }
+  .social-list {
+    float: right;
+    margin-left: 9px;
+    li {
+      display: inline-block;
+      margin-right: 8px;
+      @include size($social-width,$social-height);
+      &:last-child {
+        margin-right: 0;
+      }
+      .btn {
+        display: block;
+        @include size($social-width,$social-height);
+         background: url("../images/sprite/sprite.png") no-repeat 0 0;
+        &.fb {
+          background-position: -132px 0px;
+          &:hover {
+            background-position: -70px -117px;
+          }
+        }
+        &.tw {
+          background-position: -35px -117px;
+          &:hover {
+            background-position: -95px -35px;
+          }
+        }
+        &.gmail {
+          background-position: 0px -117px;
+          &:hover {
+            background-position: -132px -70px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,254 @@
+$slider-height: 450px;
+$slider-img-width: 1900px;
+$slider-text-color: #b2f9ff;
+$text-block-one-width: 247px;
+$text-block-two-width: 300px;
+$text-block-three-color: #00ff48;
+$pagination-width: 18px;
+$pagination-height: 23px;
+$pagination-item-width: 13px;
+$pagination-item-height: 17px;
+
+.slider {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  @include size(100%,$slider-height);
+  left: 0;
+  .item {
+    @include size(100%,$slider-height);
+    overflow: hidden;
+  }
+  .slider-img-container {
+    position: relative;
+    float: right;
+    right: 50%;
+    @include size($slider-img-width,$slider-height);
+  }
+  .slider-img {
+    position: relative;
+    z-index: 2;
+    right: -50%;
+    @include size($slider-img-width,$slider-height);
+  }
+  .layout-center-wrapper {
+    height: $slider-height;
+    .slider-ref {
+      z-index: 10;
+      position: absolute;
+      left: 0;
+      top: 101px;
+      display: block;
+      @include size($slider-ref-width,$slider-ref-height);
+      color: $slider-text-color;
+      @include text-shadow(2px 0 6px rgba(#fff,.35),
+              -2px 0 6px rgba(#fff,.35),
+              0 2px 6px rgba(#fff,.35),
+              0 -2px 6px rgba(#fff,.35));
+      text: {
+        decoration: none;
+        transform: uppercase;
+      }
+      .rub {
+        position: relative;
+        display: inline;
+        &:before {
+          position: absolute;
+          top: -0.13em;
+          left: 0;
+          content: "_";
+        }
+      }
+      .text-block-one {
+        float: left;
+        width: $text-block-one-width;
+        display: block;
+        margin-top: 33px;
+        text-align: right;
+        .get {
+          text-align: center;
+          display: inline-block;
+          width: 150px;
+          font:
+          {
+            family: "HeliosCond", sans-serif;
+            size: 30px;
+          }
+          line-height: 0.6;
+        }
+        .bonus-name {
+          line-height: 0.8;
+          display: block;
+          width: 100%;
+          font:
+          {
+            family: "HeliosCondBold", sans-serif;
+            size: 20px;
+          }
+          span {
+            font-size: 30px;
+          }
+          text-align: right;
+        }
+        .game-name {
+          line-height: 1.8;
+          text-align: center;
+          display: inline-block;
+          width: 150px;
+          font:
+          {
+            family: "HeliosCond", sans-serif;
+            size: 12px;
+          }
+        }
+      }
+    }
+    .text-block-two {
+      float: right;
+      width: $text-block-two-width;
+      display: block;
+      margin-top: 20px;
+      text-align: right;
+      margin-right: 6px;
+      .play {
+        line-height: 0.8;
+        display: block;
+        width: 100%;
+        font:
+        {
+          family: "HeliosCondBold", sans-serif;
+          size: 20px;
+        }
+        span {
+          font-size: 30px;
+        }
+        .rub {
+          &:before {
+            top: -0.03em;
+          }
+        }
+      }
+      .deposit {
+        line-height: 2;
+        display: block;
+        @include border-box();
+        padding-right: 10px;
+        font:
+        {
+          family: "HeliosCond", sans-serif;
+          size: 12px;
+        }
+      }
+      .sum {
+        display: block;
+        @include border-box();
+        line-height: 0.7;
+        padding-right: 23px;
+        font:
+        {
+          family: "HeliosCondThin", sans-serif;
+          size: 15px;
+        }
+        span {
+          font-size: 30px;
+        }
+        .rub {
+          left: 1px;
+          &:before {
+            top: -0.12em;
+          }
+        }
+      }
+    }
+    .text-block-three {
+      display: block;
+      text-align: center;
+      position: absolute;
+      left: 13px;
+      letter-spacing: -0.5px;
+      right: 0;
+      top: 89px;
+      color: $text-block-three-color;
+    }
+    .text-block-four {
+      display: block;
+      text-align: left;
+      position: absolute;
+      bottom: 15px;
+      left: 5px;
+      font:
+      {
+        family: "HeliosCond", sans-serif;
+        size: 20px;
+      }
+      .bonus {
+        display: block;
+        line-height: 0.8;
+      }
+      .sum {
+        display: block;
+        line-height: 1;
+        span {
+          font:
+          {
+            family: "HeliosCondBold", sans-serif;
+            size: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider-ref-container-block {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 101px;
+  left: 0;
+  text-align: center;
+
+}
+
+.layout-center-wrapper.pagination-wrapper {
+  z-index: 10;
+  .slider-ref-container {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 101px;
+    display: block;
+    @include size($slider-ref-width,$slider-ref-height);
+  }
+  .pagination {
+    position: absolute;
+    top: 313px;
+    right: 319px;
+    height: $pagination-item-height;
+    a {
+      position: relative;
+      z-index: 11;
+      text-indent: -9999px;
+      display: block;
+      float: left;
+      margin-right: 2px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:before {
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        @include size($pagination-width,$pagination-height);
+        background: url(../images/sprite/sprite.png) no-repeat 0 -180px;
+        content: "";
+      }
+      &.selected {
+        &:before {
+          background-position: -200px -85px;
+        }
+      }
+      @include size($pagination-item-width,$pagination-item-height);
+    }
+  }
+}

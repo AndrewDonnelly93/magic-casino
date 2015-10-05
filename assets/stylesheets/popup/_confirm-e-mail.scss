@@ -1,0 +1,26 @@
+.popup.confirm-e-mail {
+  .popup-main-head {
+    margin-bottom: 105px;
+  }
+  .popup-head {
+    margin-bottom: 34px;
+  }
+  .next-btn {
+    @extend %middle-green-btn;
+    margin: 0 auto;
+  }
+  &.second-layout {
+    .popup-main-head {
+      margin-bottom: 80px;
+    }
+    .popup-head {
+      margin-bottom: 25px;
+    }
+    .popup-middle-head {
+      margin-bottom: 34px;
+    }
+    .letter {
+      margin-bottom: 43px;
+    }
+  }
+}

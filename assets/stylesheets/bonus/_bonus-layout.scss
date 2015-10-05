@@ -1,0 +1,52 @@
+$characteristics-bonus-w: 620px;
+$inner-bonus-pic-w: 218px;
+$inner-bonus-pic-h: 218px;
+
+.left-content.inner-bonus {
+  .content-header {
+    text-align: left;
+    padding-left: 19px;
+    margin-bottom: 12px;
+  }
+  .bonus-wrapper {
+    margin-bottom: 20px;
+    width: $section-width;
+    .characteristics {
+      float: left;
+      width: $characteristics-bonus-w;
+    }
+    .bonus-pic {
+      position: relative;
+      float: right;
+      border: 1px solid $blue;
+      border: 1px solid rgba($blue,.25);
+      @include size($inner-bonus-pic-w,$inner-bonus-pic-h);
+      background: rgba(#000,.55);
+      @include box-shadow(-1px 1.732px 4px 0px rgba(0, 0, 0, 0.41));
+      @include border-box();
+      &:before {
+        position: absolute;
+        content: "";
+      }
+      .btn-container {
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        text-align: center;
+        .activate-btn {
+          display: inline-block;
+          @extend %orange-btn;
+        }
+      }
+      &.deposit-100 {
+        &:before {
+          @include size($popup-tournament-deposit-100-w,$popup-tournament-deposit-100-h);
+          background: url(../images/popup/table-deposit-100.png) no-repeat 0 0;
+          top: 9px;
+          left: 22px;
+        }
+      }
+    }
+  }
+}

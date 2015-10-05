@@ -1,0 +1,153 @@
+$popup-wrapper-w: 836px;
+$popup-left-block-w: 558px;
+$cashbox-h: 334px;
+$vizart-line-w: 834px;
+$vizart-line-h: 16px;
+$confirm-phone-form-wrapper-w: 489px;
+$confirm-phone-h: 271px;
+$popup-info-text-w: 430px;
+
+.popup.bonus-activation {
+  .popup-main-head {
+    margin-bottom: 37px;
+  }
+  .popup-wrapper {
+    width: $popup-wrapper-w;
+    margin: 0 auto;
+    .popup-head {
+      &:before {
+        background: url(../images/popup/small-popup-head-lines.png) no-repeat center 0;
+      }
+    }
+    .vizart-line {
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      top: 145px;
+      height: $vizart-line-h;
+      width: 100%;
+      background: url(../images/popup/vizart-line.png) no-repeat center 0;
+    }
+  }
+  .cashbox {
+    float: left;
+    padding-top: 27px;
+    width: $popup-left-block-w;
+    .popup-head {
+      margin-bottom: 60px;
+    }
+    .cashbox-icon {
+      @include size($popup-left-block-w,$cashbox-h);
+      background: url(../images/popup/cashbox.png) no-repeat 0 0;
+    }
+  }
+  .left-block {
+    float: left;
+    padding-top: 28px;
+  }
+  &.confirm-phone {
+    .popup-main-head {
+      margin-bottom: 49px;
+    }
+    .popup-head {
+      margin-bottom: 57px;
+    }
+    .popup-wrapper {
+      .vizart-line {
+        top: 155px;
+      }
+    }
+    .confirm-phone-form {
+      width: $popup-left-block-w;
+      @include border-box();
+      height: $confirm-phone-h;
+      position: relative;
+      padding: 35px 0;
+      background: url("../images/diagonal-35.png") repeat 0 0;
+      .second-bg {
+        @extend %popup-form-bg;
+        @include linear-gradient(to right, rgba(0,125,152,0) 0%,rgba(0,125,152,0.03) 30%,
+                rgba(0,125,152,0.03) 71%,rgba(0,125,152,0) 100%);
+      }
+      .bg {
+        @extend %popup-form-bg;
+        background: rgba(#000,.35);
+      }
+      .form-wrapper {
+        width: $confirm-phone-form-wrapper-w;
+        margin: 0 auto;
+      }
+      .input-block {
+        float: left;
+        .input-container.phone {
+          margin-bottom: 34px;
+        }
+      }
+      .button-block {
+        float: right;
+        %button-block-btn {
+          @extend %orange-btn;
+          &.inactive {
+            @extend %gray-btn;
+          }
+        }
+        .send-code-btn {
+          margin-bottom: 35px;
+          @extend %button-block-btn;
+        }
+        .confirm-btn {
+          @extend %button-block-btn;
+        }
+      }
+      .further-btn {
+        position: absolute;
+        bottom: 35px;
+        right: 35px;
+        @extend %green-btn;
+      }
+    }
+  }
+  &.info {
+    .popup-main-head {
+      margin-bottom: 43px;
+    }
+    .popup-wrapper {
+      .vizart-line {
+        top: 150px;
+      }
+    }
+    .left-block {
+      text-align: center;
+      padding-top: 100px;
+    }
+    .popup-block {
+      width: $popup-left-block-w;
+      padding: 43px 0;
+      .popup-head {
+        margin-bottom: 37px;
+      }
+      .popup-info-text {
+        z-index: 2;
+        position: relative;
+        font-size: 12px;
+        line-height: 1.5;
+        color: $popup-blue;
+        width: $popup-info-text-w;
+        margin: 0 auto 40px;
+      }
+    }
+    .btn-block {
+      z-index: 2;
+      position: relative;
+    }
+    .activate-btn {
+      position: relative;
+      display: inline-block;
+      @extend %orange-btn;
+    }
+    .link {
+      margin-left: 13px;
+      display: inline-block;
+    }
+  }
+}

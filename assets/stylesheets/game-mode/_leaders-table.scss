@@ -1,0 +1,130 @@
+$leaders-table-name-row-w: 130px;
+$leaders-table-row-w: 149px;
+$game-leaders-table-row-name-w: 96px;
+$game-leaders-table-row-score-w: 63px;
+$game-leaders-table-row-h: 20px;
+$game-leaders-table-w: 170px;
+$game-leaders-item-bottom: 5px;
+
+.game-container {
+  .leaders-table-name {
+    position: relative;
+    margin-top: 67px;
+    margin-bottom: 4px;
+    display: table;
+    width: $game-leaders-table-w;
+    @include border-box();
+    li {
+      list-style: none;
+      &:nth-child(odd) {
+        float: left;
+      }
+      &:nth-child(even) {
+        float: right;
+      }
+      font: {
+        size: 10px;
+        weight: 600;
+      }
+      text: {
+        align: left;
+        transform: uppercase;
+      }
+      color: $light-gray;
+      width: $game-leaders-table-w;
+      .name {
+        @include border-box();
+        padding-left: 7px;
+        float: left;
+        width: $game-leaders-table-row-name-w;
+      }
+      .score {
+        margin-left: 0;
+        float: right;
+        width: $game-leaders-table-row-score-w;
+      }
+    }
+  }
+  .leaders {
+    position: relative;
+  }
+  .leaders-table {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: $game-leaders-table-w;
+    li {
+      @include size($game-leaders-table-w, $game-leaders-table-row-h);
+      margin-bottom: $game-leaders-item-bottom;
+      background: rgba(#000,.15);
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../images/lines-25-290x30.png") no-repeat 0 0;
+        @include size($game-leaders-table-w, $game-leaders-table-row-h);
+      }
+      &:last-child {
+        margin-bottom: $game-leaders-item-bottom;
+      }
+      &:nth-child(odd) {
+        float: none;
+      }
+      &:nth-child(even) {
+        float: none;
+      }
+      text: {
+        align: left;
+      }
+      color: $light-gray;
+      line-height: $game-leaders-table-row-h + 1;
+      font: {
+        size: 10px;
+      }
+      .name {
+        float: left;
+        padding-left: 5px;
+        padding-right: 30px;
+        width: $game-leaders-table-row-name-w;
+      }
+      .score {
+        float: right;
+        margin-left: 0;
+        width: $game-leaders-table-row-score-w;
+        @extend %text-overflow;
+      }
+      &.current-user {
+        .name {
+          color: $light-orange;
+        }
+        .score {
+          color: $light-orange;
+        }
+      }
+    }
+    margin-bottom: 6px;
+  }
+  .qualify-rounds {
+    color: $light-orange;
+    text: {
+      transform: uppercase;
+      align: left;
+    }
+    font: {
+      size: 12px;
+      weight: 600;
+    }
+    .text {
+      @include border-box();
+      padding-left: 5px;
+      width: 70%;
+      display: inline-block;
+    }
+    .count {
+      @include border-box();
+      width: 30%;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}

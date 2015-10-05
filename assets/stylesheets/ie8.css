@@ -1,0 +1,175 @@
+.registration-block .reg-btn {
+  behavior: url(PIE.htc); }
+.registration-block .sign-in-btn {
+  behavior: url(PIE.htc); }
+
+.selected-lang-list {
+  background: url("../images/old-ie/select-language.png") repeat 0 0;
+  behavior: url(PIE.htc); }
+
+.game-category .game-category-list {
+  behavior: url(PIE.htc); }
+  .game-category .game-category-list li {
+    background: url("../images/old-ie/navigation.png") repeat-x 0 0; }
+    .game-category .game-category-list li a.active {
+      behavior: url(PIE.htc); }
+
+input.small-field {
+  behavior: url(PIE.htc);
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+.winners-list li .img-container .hover-block {
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+.jackpot-section .bg-jackpot {
+  behavior: url(PIE.htc); }
+.jackpot-section .jackpot-wrapper {
+  behavior: url(PIE.htc); }
+
+.game-list {
+  text-align: center; }
+  .game-list .game-item {
+    behavior: url(PIE.htc);
+    background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+    .game-list .game-item:nth-child(4n) {
+      margin-right: 0; }
+    .game-list .game-item .hover-block {
+      background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+.aside-block {
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0;
+  behavior: url(PIE.htc); }
+  .aside-block:before {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=22); }
+
+.main-menu .main-menu-list li.active {
+  top: -1px; }
+
+.header-reg .user-info .status-box {
+  behavior: url(PIE.htc);
+  background: url("../images/old-ie/status-box.png") no-repeat 0 0; }
+
+.owl-carousel {
+  width: 645px !important;
+  margin: 0 auto !important;
+  top: 5px !important;
+  left: 0 !important; }
+  .owl-carousel .owl-item {
+    top: 0px !important;
+    height: 252px !important; }
+
+.promo-block {
+  height: 320px !important;
+  background-repeat: repeat-y !important; }
+
+.owl-nav {
+  top: 115px !important;
+  left: -32px !important; }
+  .owl-nav .owl-prev {
+    left: 0 !important; }
+  .owl-nav .owl-next {
+    right: -684px !important; }
+
+.tourney-card {
+  background: url("../images/old-ie/rgba-35.png") repeat 0 0; }
+  .tourney-card .left-section .tourn-img-container .small-grad {
+    background: #00FE48; }
+  .tourney-card .center-section .tourney-games-list li:hover {
+    background: url("../images/old-ie/rgba-38.png") repeat 0 0; }
+  .tourney-card .right-section .tourney-leaders-list li {
+    behavior: url(PIE.htc); }
+    .tourney-card .right-section .tourney-leaders-list li .bg {
+      behavior: url(PIE.htc);
+      background: url("../images/old-ie/rgba-38.png") repeat 0 0; }
+
+.window-overlay {
+  background: url("../images/old-ie/rgba-75.png") repeat 0 0; }
+
+.popup form:after {
+  background: url("../images/old-ie/rgba-35.png") repeat 0 0; }
+
+.characteristics {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0; }
+  .characteristics .characteristics-list td.key .bg {
+    behavior: url(PIE.htc);
+    background: url("../images/old-ie/rgba-38.png") repeat 0 0; }
+  .characteristics .characteristics-list td.value {
+    background: url("../images/old-ie/rgba-25.png") repeat 0 0; }
+
+.left-content.inner-bonus .bonus-wrapper .bonus-pic {
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+.content-box {
+  background: url("../images/diagonal-35.png") repeat 0 0; }
+  .content-box:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: url("../images/old-ie/rgba-35.png") repeat 0 0; }
+
+.content-container {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0; }
+
+.prizes-table:before {
+  behavior: url(PIE.htc); }
+.prizes-table li:nth-child(even) {
+  background: url("../images/old-ie/rgba-25.png") repeat 0 0; }
+
+.leaders-tables {
+  behavior: url(PIE.htc); }
+  .leaders-tables .bg {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100); }
+  .leaders-tables .best-players-table tr {
+    background: url("../images/old-ie/rgba-38.png") repeat 0 0; }
+
+.game-container {
+  behavior: url(PIE.htc); }
+  .game-container .left-column .game-of-month {
+    behavior: url(PIE.htc); }
+
+.game-mode .user-info .status-box {
+  background: url("../images/old-ie/rgba-15.png") repeat 0 0; }
+  .game-mode .user-info .status-box .progress-bar li {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35); }
+    .game-mode .user-info .status-box .progress-bar li.active {
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100); }
+      .game-mode .user-info .status-box .progress-bar li.active span {
+        behavior: url(PIE.htc); }
+.game-mode .user-info .balance-drifts {
+  background: url("../images/old-ie/rgba-15.png") repeat 0 0; }
+.game-mode .user-info .cashback {
+  background: url("../images/old-ie/rgba-15.png") repeat 0 0; }
+
+.game-container.demo .select-greeting-bonus .bonus-image {
+  behavior: url(PIE.htc); }
+.game-container .leaders-table li {
+  background: url("../images/old-ie/rgba-15.png") repeat 0 0; }
+
+.game-mode .aside-block.tournaments .header {
+  background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+.cabinet-section .contact-box .mail, .cabinet-section .contact-box .phone {
+  behavior: url(PIE.htc); }
+.cabinet-section .profile-info-lines .profile-info-line {
+  background: url("../images/old-ie/rgba-35.png") repeat 0 0; }
+.cabinet-section .exchange-block .balance-box .big-frame {
+  behavior: url(PIE.htc); }
+.cabinet-section .exchange-block .balance-box .content {
+  behavior: url(PIE.htc); }
+.cabinet-section .exchange-block .central-section .content {
+  behavior: url(PIE.htc); }
+.cabinet-section .exchange-block .central-section .big-frame {
+  behavior: url(PIE.htc); }
+.cabinet-section.bonuses .cabinet-bonus {
+  behavior: url(PIE.htc);
+  background: url("../images/old-ie/rgba-35.png") repeat 0 0; }
+  .cabinet-section.bonuses .cabinet-bonus .right-section .time-counter {
+    background: url("../images/old-ie/rgba-50.png") repeat 0 0; }
+
+div.fancy-select.birth-date ul.options {
+  background: url("../images/old-ie/rgba-85.png") repeat 0 0; }
+  div.fancy-select.birth-date ul.options li.hover:before {
+    background: url("../images/old-ie/rgba-90.png") repeat 0 0; }

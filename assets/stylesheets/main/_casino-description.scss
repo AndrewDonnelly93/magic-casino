@@ -1,0 +1,14 @@
+$blue-arrow-width: 29px;
+$blue-arrow-height: 30px;
+
+.casino-description {
+  position: relative;
+  .blue-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    @include size($blue-arrow-width,$blue-arrow-height);
+    background: url("../images/sprite/sprite.png") no-repeat -105px -117px;
+  }
+}

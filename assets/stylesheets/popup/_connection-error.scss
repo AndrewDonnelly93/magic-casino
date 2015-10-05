@@ -1,0 +1,25 @@
+$connection-error-w: 95px;
+$connection-error-h: 95px;
+$connection-lost-w: 301px;
+$connection-lost-h: 72px;
+
+.popup.connection-error {
+  .popup-main-head {
+    margin-bottom: 114px;
+  }
+  .popup-head {
+    margin-bottom: 23px;
+  }
+  .connection-error-icon {
+    margin: 38px auto 58px;
+    @include size($connection-error-w,$connection-error-h);
+    background: url(../images/popup/connection-lost.png) no-repeat 0 0;
+  }
+  .connection-lost {
+    position: relative;
+    left: -15px;
+    margin: 45px auto 74px;
+    @include size($connection-lost-w,$connection-lost-h);
+    background: url(../images/popup/connection-lost-2.png) no-repeat 0 0;
+  }
+}

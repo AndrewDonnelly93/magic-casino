@@ -1,0 +1,206 @@
+$standard-btn-width: 140px;
+$standard-btn-height: 39px;
+$middle-btn-width: 126px;
+$large-orange-btn-width: 150px;
+$big-standard-btn-width: 211px;
+$long-standard-btn-width: 178px;
+$big-standard-btn-height: 59px;
+$small-standard-btn-width: 99px;
+$small-standard-btn-height: 28px;
+$extrasmall-standard-btn-width: 70px;
+$extrasmall-standard-btn-height: 20px;
+$standard-btn-color: #2e1000;
+$form-btn-w: 315px;
+$form-btn-h: 39px;
+$ok-btn-w: 100px;
+$ok-btn-h: 39px;
+
+%standard-btn {
+  position: relative;
+  @include size($standard-btn-width,$standard-btn-height);
+  line-height: $standard-btn-height + 2;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 12px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+}
+
+%long-green-btn {
+  @extend %standard-btn;
+  width: $long-standard-btn-width;
+  background: url("../images/buttons/long-green-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -41px;
+  }
+}
+
+%middle-green-btn {
+  @extend %standard-btn;
+  width: $middle-btn-width;
+  background: url("../images/buttons/middle-green-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%large-orange-btn {
+  @extend %standard-btn;
+  width: $large-orange-btn-width;
+  background: url("../images/buttons/large-orange-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%ok-btn {
+  position: relative;
+  @include size($ok-btn-w,$ok-btn-h);
+  line-height: $ok-btn-h + 2;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 12px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+  background: url("../images/buttons/ok-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%form-btn {
+  position: relative;
+  @include size($form-btn-w,$form-btn-h);
+  line-height: $form-btn-h + 3;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 12px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+}
+
+%big-standard-btn {
+  position: relative;
+  @include size($big-standard-btn-width,$big-standard-btn-height);
+  line-height: $big-standard-btn-height + 2;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 20px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+}
+
+%small-standard-btn {
+  position: relative;
+  @include size($small-standard-btn-width,$small-standard-btn-height);
+  line-height: $small-standard-btn-height + 3;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 10px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+}
+
+%extrasmall-standard-btn {
+  position: relative;
+  @include size($extrasmall-standard-btn-width,$extrasmall-standard-btn-height);
+  line-height: $extrasmall-standard-btn-height + 2;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 10px;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $standard-btn-color;
+}
+
+%orange-btn {
+  @extend %standard-btn;
+  background: url("../images/buttons/orange-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%green-btn {
+  @extend %standard-btn;
+  background: url("../images/buttons/green-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%small-green-btn {
+  @extend %small-standard-btn;
+  background: url("../images/buttons/small-green-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -28px;
+  }
+}
+
+%extrasmall-orange-btn {
+  @extend %extrasmall-standard-btn;
+  background: url("../images/buttons/extrasmall-orange-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -20px;
+  }
+}
+
+%big-orange-btn {
+  @extend %big-standard-btn;
+  background: url("../images/buttons/big-orange-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -59px;
+  }
+}
+
+%gray-btn {
+  @extend %standard-btn;
+  color: #000;
+  background: url("../images/buttons/gray-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}
+
+%orange-form-btn {
+  @extend %form-btn;
+  background: url("../images/buttons/form-orange-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -39px;
+  }
+}

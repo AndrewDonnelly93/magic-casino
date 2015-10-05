@@ -1,0 +1,111 @@
+$payment-width: 193px;
+$payment-height: 105px;
+$p-visa-width: 90px;
+$p-visa-height: 41px;
+$p-paysafe-width: 135px;
+$p-paysafe-height: 23px;
+$p-skrill-width: 78px;
+$p-skrill-height: 40px;
+$p-wire-transfer-width: 90px;
+$p-wire-transfer-height: 32px;
+$p-neteller-width: 135px;
+$p-neteller-height: 24px;
+$p-ukash-width: 108px;
+$p-ukash-height: 40px;
+
+.payment-systems {
+  margin-bottom: 15px;
+  height: $payment-height;
+  text-align: center;
+  .payment {
+    z-index: 2;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: $payment-width + 1;
+      height: $payment-height;
+      background: url(../images/payment/box-sprite.png) 0 -107px;
+    }
+    &:hover {
+      &:before {
+        width: $payment-width - 1;
+        background-position: 0 0;
+      }
+    }
+    &.active {
+      &:before {
+        width: $payment-width;
+        height: $payment-height + 12;
+        background-position: 0 -214px;
+      }
+    }
+    list-style: none;
+    margin-right: 4px;
+    margin-bottom: 15px;
+    &:nth-child(6n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.payment {
+  display: inline-block;
+  position: relative;
+  width: $payment-width;
+  height: $payment-height;
+  .background-logo {
+    display: block;
+    position: absolute;
+    width: $payment-width;
+    height: $payment-height;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.visa {
+    .background-logo {
+      background-image: url(../images/payment/visa.png);
+      @include background-size($p-visa-width $p-visa-height);
+      left: -5px;
+    }
+  }
+  &.paysafe {
+    .background-logo {
+      background-image: url(../images/payment/paysafe.png);
+      @include background-size($p-paysafe-width $p-paysafe-height);
+      left: -4px;
+    }
+  }
+  &.skrill {
+    .background-logo {
+      background-image: url(../images/payment/skrill.png);
+      @include background-size($p-skrill-width $p-skrill-height);
+    }
+  }
+  &.wire-transfer {
+    .background-logo {
+      background-image: url(../images/payment/wire.png);
+      @include background-size($p-wire-transfer-width $p-wire-transfer-height);
+      left: -4px;
+    }
+  }
+  &.neteller {
+    .background-logo {
+      background-image: url(../images/payment/neteller.png);
+      @include background-size($p-neteller-width $p-neteller-height);
+      left: -3px;
+      top: -2px;
+    }
+  }
+  &.ukash {
+    .background-logo {
+      background-image: url(../images/payment/ukash.png);
+      @include background-size($p-ukash-width $p-ukash-height);
+      left: -4px;
+      top: -2px;
+    }
+  }
+}

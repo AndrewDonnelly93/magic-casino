@@ -1,0 +1,64 @@
+$characteristics-list-item-h: 30px;
+$superlight-blue: #35f3ff;
+$blank-tr-h: 19px;
+
+.characteristics {
+  position: relative;
+  @extend %basic-block;
+  padding: 19px;
+  .characteristics-list {
+    position: relative;
+    width: 100%;
+    .blank {
+      height: $blank-tr-h;
+    }
+    td {
+      height: $characteristics-list-item-h;
+      line-height: $characteristics-list-item-h - 1;
+      font: {
+        weight: 600;
+        size: 14px;
+      }
+      color: $blue;
+      @include border-box();
+      span {
+        position: relative;
+        z-index: 2;
+        @extend %text-overflow;
+      }
+      position: relative;
+      &.key {
+        border: 1px solid $blue;
+        @include box-shadow(0 0 3px 1px rgba($blue,1));
+        text:
+        {
+          align: left;
+          transform: uppercase;
+        }
+        padding-left: 17px;
+        margin-bottom: 19px;
+        width: 50%;
+        .bg {
+          background: rgba(#000,.38);
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          right: 1px;
+          height: 26px;
+          @include box-shadow(inset 0 0 7px 2px rgba($blue, 0.75));
+        }
+      }
+      &.value {
+        text-align: right;
+        padding-right: 14px;
+        width: 50%;
+        background: rgba(#000,.25);
+        .bg {
+         @extend %full-size-pseudo;
+          background: url("../images/lines-25-290x30.png") repeat-x 0 0;
+        }
+      }
+    }
+
+  }
+}

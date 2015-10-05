@@ -1,0 +1,162 @@
+$media-indent: 40px;
+
+
+@media only screen {
+
+
+  /* 1280px width layout */
+
+  @media (min-width: $middle-game-container-width + $media-indent) {
+    .game-container {
+      width: $middle-game-container-width;
+      margin-left: -($middle-game-container-width/2);
+      .center-column {
+        width: $middle-center-width;
+      }
+      .right-column {
+        display: block;
+        @media (min-height: $middle-game-container-height) {
+        .exit-btn {
+        	display: block;
+        }
+        }
+      }
+      .leaders-table {
+        height: 8*$game-leaders-table-row-h + 8*$game-leaders-item-bottom;
+      }
+       .game-list {
+        display: block;
+        height: 3*$middle-game-item-height + 3*$game-item-margin-bottom;
+      }
+    }
+  }
+
+  /* 1366px width layout */
+
+  @media (min-width: $big-game-container-width + $media-indent) {
+    .game-container {
+      width: $big-game-container-width;
+      margin-left: -($big-game-container-width/2);
+      .center-column {
+        width: $big-center-width;
+      }
+    }
+  }
+
+  /* 1444px width layout */
+
+  @media (min-width: $large-game-container-width + $media-indent) {
+    .game-container {
+      width: $large-game-container-width;
+      margin-left: -($large-game-container-width/2);
+      .center-column {
+        width: $large-center-width;
+      }
+    }
+  }
+
+  /* 646px height layout */
+
+  @media (min-height: $middle-game-container-height) {
+
+    .game-mode {
+      height: $middle-game-container-height;
+    }
+
+    .game-container {
+      height: $middle-game-container-height;
+      margin-top: -($middle-game-container-height/2);
+      .left-column,
+      .right-column,
+      .center-column {
+        height: $middle-game-container-height;
+      }
+
+      .left-column {
+        .game-of-month {
+          display: block;
+        }
+        .gift-btn {
+          display: block;
+        }
+        .btn-block {
+          display: none;
+        }
+      }
+
+      .game-list {
+        display: block;
+        height: 3*$middle-game-item-height + 3*$game-item-margin-bottom;
+      }
+
+      .leaders-table {
+        height: 9*$game-leaders-table-row-h + 9*$game-leaders-item-bottom;
+      }
+    }
+
+    .game-container.demo {
+      .select-greeting-bonus {
+        display: block;
+      }
+    }
+
+  }
+
+  /* 710px height layout */
+
+  @media (min-height: $big-game-container-height) {
+
+    .game-container {
+      height: $big-game-container-height;
+      margin-top: -($big-game-container-height/2);
+      .left-column,
+      .right-column,
+      .center-column {
+        height: $big-game-container-height;
+      }
+      .leaders-table {
+        height: 11*$game-leaders-table-row-h + 11*$game-leaders-item-bottom;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        margin-bottom: 8px;
+      }
+    }
+
+    .game-mode {
+      height: $big-game-container-height;
+    }
+
+    .game-container.demo {
+      .select-greeting-bonus {
+        bottom: 111px;
+      }
+    }
+
+  }
+
+  /* 768px height layout */
+
+  @media (min-height: $large-game-container-height) {
+
+    .game-container {
+      height: $large-game-container-height;
+      margin-top: -($large-game-container-height/2);
+      .left-column,
+      .right-column,
+      .center-column {
+        height: $large-game-container-height;
+      }
+      .game-list {
+        height: 4*$middle-game-item-height + 5*$game-item-margin-bottom;
+      }
+    }
+
+
+    .game-mode {
+      height: $large-game-container-height;
+    }
+
+  }
+
+}

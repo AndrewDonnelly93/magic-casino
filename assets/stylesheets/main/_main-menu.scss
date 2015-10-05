@@ -1,0 +1,74 @@
+$main-menu-list-item-width: 188px;
+$main-menu-list-item-height: 40px;
+$main-menu-split-width: 2px;
+$menu-color: #c8c8c8;
+
+.main-menu {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 10;
+  text-align: right;
+  display: inline-block;
+  float: right;
+  .main-menu-list {
+    display: inline-block;
+    text-align: center;
+    li {
+      position: relative;
+      display: inline-block;
+      @include size($main-menu-list-item-width,$main-menu-list-item-height);
+      &:before {
+        z-index: 2;
+        display: block;
+        content: "";
+        position: absolute;
+        right: -1px;
+        top: 0;
+        @include size($main-menu-split-width,$main-menu-list-item-height);
+        background: url("../images/main-menu-split.png") no-repeat 0 0;
+      }
+      &:last-child {
+        &:before {
+          display: none;
+        }
+      }
+      a {
+        position: relative;
+        @include size($main-menu-list-item-width,$main-menu-list-item-height);
+        display: block;
+        @include linear-gradient(to bottom, rgba(54,54,54,0.83) 0%,rgba(53,53,53,0.91) 3%,
+                rgba(49,49,49,0.91) 15%,rgba(46,46,46,0.91) 18%,rgba(40,40,40,0.91) 31%,rgba(7,7,7,0.9) 77%,
+                rgba(3,3,3,0.9) 97%,rgba(2,2,2,0.91) 100%);
+        text: {
+          decoration: none;
+          align: center;
+          transform: uppercase;
+        }
+        font: {
+          size: 12px;
+          weight: 500;
+        }
+        color: $menu-color;
+        line-height: $main-menu-list-item-height + 1;
+        &:hover {
+          color: $base-color;
+          @include  linear-gradient(to bottom, rgba(10,13,16,0.84) 0%,rgba(10,14,17,0.9) 3%,rgba(13,18,20,0.9) 21%,
+                  rgba(31,38,41,0.9) 77%,rgba(34,42,46,0.9) 97%,rgba(35,43,47,0.84) 100%);
+        }
+      }
+      &.active {
+        a {
+          background: url("../images/main-menu-active.png") no-repeat 0 0;
+          line-height: $main-menu-list-item-height;
+          font: {
+            size: 14px;
+            weight: 600;
+          }
+          color: $blue;
+          @include text-shadow(0 1px 0 rgba(11, 22, 35,.75));
+        }
+      }
+    }
+  }
+}

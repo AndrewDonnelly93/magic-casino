@@ -1,0 +1,48 @@
+$cashier-width: 558px;
+$cashier-height: 334px;
+$advertising-block-height: 265px;
+$advertising-block-bg: #152d33;
+
+.cabinet-section {
+  &.cashier {
+    padding-top: 61px;
+    padding-bottom: 57px;
+    iframe {
+      margin: 0 auto;
+      width: $cashier-width;
+      height: $cashier-height;
+      background:  url(../images/popup/cashbox.png) no-repeat 0 0;
+      display: block;
+      border: none;
+      @include border-box;
+    }
+  }
+}
+
+.advertising {
+  width: $cashier-width;
+  height: $advertising-block-height;
+  background: $advertising-block-bg;
+  margin: 37px auto 0;
+  text: {
+    align: center;
+    decoration: none;
+  }
+  font: {
+    size: 30px;
+  }
+  &:before {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .advertising-text {
+    @include border-box();
+    width: 95%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    color: $base-color;
+  }
+}

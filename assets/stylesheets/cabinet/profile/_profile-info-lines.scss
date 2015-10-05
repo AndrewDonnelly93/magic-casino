@@ -1,0 +1,130 @@
+$profile-info-line-h: 70px;
+$profile-info-line-w: 220px;
+$profile-info-box-w: 56px;
+$profile-info-box-h: 43px;
+$profile-section-info-w: 90px;
+$profile-mark-size: 21px;
+
+.cabinet-section {
+  .profile-info-lines {
+    .profile-info-line {
+      position: relative;
+      @include size($profile-info-line-w,$profile-info-line-h);
+      background: rgba(#000, .35);
+      &:before {
+        @extend %full-size-pseudo;
+        background: url("../images/diagonal-35.png") repeat 0 0;
+      }
+      .section-info {
+        position: relative;
+        z-index: 2;
+        margin-top: 20px;
+        margin-left: 20px;
+        float: left;
+        @extend %text-overflow;
+        max-width: $profile-section-info-w;
+        text-align: left;
+        .section-name {
+          font: {
+            size: 12px;
+            weight: 600;
+          }
+          text-transform: uppercase;
+          color: $blue;
+          margin-bottom: 8px;
+        }
+        .status-block {
+          font: {
+            size: 10px;
+            weight: 600;
+          }
+          color: $light-green;
+        }
+      }
+      .bonus-quantity {
+        margin: 11px 39px 0 0;
+        display: block;
+        float: right;
+        @include size($bonus-quantity-w,$bonus-quantity-h);
+        line-height: $bonus-quantity-h + 1;
+        text: {
+          decoration: none;
+          align: center;
+          transform: uppercase;
+        }
+        font: {
+          family: "Russo One", sans-serif;
+          weight: 600;
+          size: 18px;
+        }
+        color: $light-green;
+        position: relative;
+        .bonus-ring-elements {
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 1px;
+          @include size($bonus-quantity-w,$bonus-quantity-h);
+          background: url("../images/bonus-ring-elements.png") no-repeat 0 0;
+          &:hover {
+            @include animation(ring-rotate,5s,infinite,linear,none);
+          }
+        }
+        &:before {
+          @include size($bonus-ring-size,$bonus-ring-size);
+          content: "";
+          position: absolute;
+          top: 8px;
+          left: 7px;
+          background: url("../images/bonus-ring.png") no-repeat 0 0;
+        }
+      }
+      .info-box {
+        text-align: center;
+        float: right;
+        margin-top: 11px;
+        margin-right: 43px;
+        position: relative;
+        @include size($profile-info-box-w,$profile-info-box-h);
+        background: url("../images/profile/sprite/sprite.png") no-repeat -58px 0;
+        line-height: $profile-info-box-h + 2;
+        text-transform: uppercase;
+        color: $light-green;
+        font: {
+          family: "Russo One", sans-serif;
+          size: 18px;
+          weight: 400;
+        }
+        .mark {
+          position: relative;
+          left: 1px;
+          @include size($profile-mark-size,$profile-mark-size);
+          margin: 13px auto 0;
+          background: url("../images/profile/sprite/sprite.png") no-repeat 0px -45px;
+        }
+      }
+      &.active {
+        .info-box {
+          background-position: 0 0;
+          color: $orange;
+          .mark {
+            margin-top: 14px;
+            @include size($profile-mark-size,$profile-mark-size - 2);
+            background-position: -23px -45px;
+          }
+        }
+      }
+      &.turnover {
+        float: left;
+        margin-right: 20px;
+      }
+      &.active-bonuses {
+        float: left;
+      }
+      &.active-wager {
+        float: right;
+      }
+    }
+    margin-bottom: 40px;
+  }
+}

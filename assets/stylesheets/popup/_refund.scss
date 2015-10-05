@@ -1,0 +1,42 @@
+$refund-round-size: 328px;
+$refund-round-frame-w: 373px;
+$refund-round-frame-h: 311px;
+
+.popup.refund {
+  .popup-main-head {
+    margin-bottom: 70px;
+  }
+  .popup-head {
+    margin: 0 auto 34px;
+    max-width: 370px;
+    overflow: visible;
+    white-space: normal;
+    line-height: 1.2;
+    padding: 0;
+    .head {
+      text-transform: none;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .refund-round {
+    margin: 0 auto;
+    @include size($refund-round-size,$refund-round-size);
+    position: relative;
+    background: url(../images/popup/refund-round.png) no-repeat 0 0;
+    &:before {
+      top: 9px;
+      left: -23px;
+      content: "";
+      @include size($refund-round-frame-w,$refund-round-frame-h);
+      position: absolute;
+      background: url(../images/popup/round-frame.png) no-repeat 0 0;
+    }
+    &:hover {
+      &:before {
+        @include animation(winners-ring-rotate,6s,infinite,linear,none);
+      }
+    }
+  }
+}

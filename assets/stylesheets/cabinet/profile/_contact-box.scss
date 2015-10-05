@@ -1,0 +1,181 @@
+$contact-box-w: 338px;
+$contact-box-h: 34px;
+$mail-icon-w: 12px;
+$mail-icon-h: 16px;
+$phone-icon-w: 15px;
+$phone-icon-h: 19px;
+$contact-data-w: 170px;
+$confirm-phone-input-w: 158px;
+$enter-phone-h: 146px;
+
+.cabinet-section {
+  .contact-box {
+    .mail, .phone {
+      font: {
+        weight: 600;
+        size: 12px;
+      }
+      position: relative;
+      @include size($contact-box-w,$contact-box-h);
+      @include box-shadow(inset 0 0 5px rgba($blue, 0.5));
+      background: $form-field-bg;
+      @include border-box();
+      &:before {
+        display: block;
+        @extend %pseudo-one-pixel-more;
+        background: rgb(102, 239, 255);
+        @include linear-gradient(to top, rgb(0, 173, 194) 0%,
+                rgb(213, 253, 255) 35%, rgb(102, 239, 255) 100%);
+        @include box-shadow(0 0 5px 1px rgba(53, 243, 255, 0.5));
+      }
+    }
+    .contact-line {
+      background: $form-field-bg;
+      display: block;
+      position: relative;
+      @include border-box();
+      padding-right: 9px;
+      height: $contact-box-h;
+      line-height: $contact-box-h + 1;
+      z-index: 3;
+      text-align: center;
+      .icon {
+        float: left;
+      }
+      .add {
+        display: inline-block;
+        text: {
+          transform: uppercase;
+          decoration: underline;
+          align: center;
+        }
+        color: $light-green;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .contact-data {
+        float: left;
+        @extend %text-overflow;
+        max-width: $contact-data-w;
+        color: $base-color;
+      }
+      .confirm-link {
+        float: right;
+        display: block;
+        text: {
+          transform: uppercase;
+          decoration: underline;
+          align: center;
+        }
+        color: $light-green;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .confirmed {
+        float: right;
+        text: {
+          decoration: none;
+          align: center;
+        }
+        color: $blue;
+      }
+      &.not-confirmed {
+        .add {
+          display: none;
+        }
+        .confirmed {
+          display: none;
+        }
+      }
+      &.confirmed {
+        .add {
+          display: none;
+        }
+        .confirm-link {
+          display: none;
+        }
+      }
+      &.not-set {
+        .confirmed {
+          display: none;
+        }
+        .contact-data {
+          display: none;
+        }
+        .confirm-link {
+          display: none;
+        }
+      }
+    }
+    .mail {
+      float: left;
+      .contact-line {
+        .icon {
+          margin: 10px 7px 0 10px;
+          @include size($mail-icon-w,$mail-icon-h);
+          background: url("../images/profile/sprite/sprite.png") no-repeat -63px -45px;
+        }
+      }
+    }
+    .phone {
+      &.open-form {
+        height: $enter-phone-h;
+      }
+      float: right;
+      .contact-line {
+        .icon {
+          margin: 9px 7px 0 10px;
+          @include size($phone-icon-w,$phone-icon-h);
+          background: url("../images/profile/sprite/sprite.png") no-repeat -46px -45px;
+        }
+      }
+      .enter-phone {
+          display: none;
+          z-index: 2;
+          height: $enter-phone-h;
+        &:before {
+          content: "";
+          background: $form-field-bg;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          top: $contact-box-h;
+        }
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: $contact-box-w;
+          @include border-box();
+          &.active {
+            display: block;
+          }
+          .enter-phone-container {
+            margin-top: 43px;
+            &:first-child {
+              margin-bottom: 24px;
+            }
+          }
+          .input-container.small {
+            width: $confirm-phone-input-w;
+            height: $small-field-h;
+            @include border-box();
+            margin-left: 14px;
+            margin-right: 12px;
+            float: left;
+            position: relative;
+            input.form-field {
+              width: $confirm-phone-input-w;
+            }
+          }
+          .confirm-btn {
+            float: left;
+            @extend %profile-confirm-btn;
+        }
+      }
+    }
+    margin-bottom: 41px;
+  }
+}

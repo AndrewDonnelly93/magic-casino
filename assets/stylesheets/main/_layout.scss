@@ -1,0 +1,328 @@
+$logo-width: 226px;
+$logo-height: 105px;
+$logo-href-width: 250px;
+$logo-href-height: 100px;
+$header-height: 400px;
+$aside-header-height: 30px;
+$aside-section-name-width: 258px;
+$shape-left-width: 10px;
+$shape-left-height: 7px;
+$shape-right-width: 27px;
+$shape-right-height: 6px;
+$aside-shape-center-width: 298px;
+$shape-center-height: 2px;
+$aside-icon-height: 24px;
+$aside-icon-width: 30px;
+$icon-container-width: 42px;
+$section-header-height: 35px;
+$section-width: 860px;
+$slider-ref-width: 860px;
+$slider-ref-height: 249px;
+$top-right-corner-width: 9px;
+$top-right-corner-height: 9px;
+$bottom-left-corner-width: 9px;
+$bottom-left-corner-height: 9px;
+$bottom-right-corner-width: 9px;
+$bottom-right-corner-height: 10px;
+
+@-webkit-keyframes transform-shape {
+  0% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+  25% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(0deg));
+  }
+  75% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(180deg));
+  }
+  100% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+}
+
+@-moz-keyframes transform-shape {
+  0% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+  25% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(0deg));
+  }
+  75% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(180deg));
+  }
+  100% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+}
+
+@-o-keyframes transform-shape {
+  0% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+  25% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(0deg));
+  }
+  75% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(180deg));
+  }
+  100% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+}
+
+@keyframes transform-shape {
+  0% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+  25% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(0deg));
+  }
+  75% {
+    @include transform(rotateX(180deg));
+    @include transform(rotateY(180deg));
+  }
+  100% {
+    @include transform(rotateX(0deg));
+    @include transform(rotateY(0deg));
+  }
+}
+
+%shape-left {
+    position: absolute;
+    @include size($shape-left-width, $shape-left-height);
+    background: url("../images/sprite/sprite.png") no-repeat -200px -163px;
+    @include animation(transform-shape,3s,infinite,linear,none);
+    left: 41px;
+}
+
+%shape-right {
+  @include animation(transform-shape,3s,infinite,linear,none);
+  position: absolute;
+  @include size($shape-right-width, $shape-right-height);
+  background: url("../images/sprite/sprite.png") no-repeat -200px -113px;
+  right: 0;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  height: $header-height;
+  z-index: 5;
+  .layout-center-wrapper {
+    .logo {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: -10px;
+      z-index: 6;
+      @include size($logo-href-width,$logo-href-height);
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size($logo-href-width,$logo-href-height);
+        z-index: 4;
+      }
+      &:before {
+        @include size($logo-width,$logo-height);
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 0;
+        z-index: 3;
+        background: url("../images/mclogo.png") no-repeat 0 0;
+      }
+    }
+  }
+}
+
+.aside-header {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 3;
+  .aside-shape-left {
+    @extend %shape-left;
+    bottom: 2px;
+  }
+  .aside-shape-center {
+    position: absolute;
+    left: 1px;
+    bottom: 0;
+    @include size($aside-shape-center-width, $shape-center-height);
+    background: url("../images/aside-shape-center.png") no-repeat 0 0;
+  }
+  .aside-shape-right {
+    @extend %shape-right;
+    bottom: -7px;
+  }
+  .icon-container {
+    position: relative;
+    vertical-align: middle;
+    width: 42px;
+    display: table-cell;
+    .icon {
+      position: relative;
+      margin: 0 auto;
+      @include size($aside-icon-width, $aside-icon-height);
+    }
+  }
+  .aside-head {
+    position: relative;
+    width: 256px;
+    span {
+      max-width: 90%;
+    }
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 5px;
+    @include border-box();
+    line-height: $aside-header-height + 2;
+    color: $blue;
+    font: {
+      weight: 600;
+      size: 18px;
+    }
+    text: {
+      transform: uppercase;
+    }
+  }
+}
+
+.section-header {
+  position: relative;
+  @include size($section-width,$section-header-height);
+  .shape-left {
+    @extend %shape-left;
+    top: 25px;
+  }
+  .shape-right {
+    @extend %shape-right;
+    top: 36px;
+  }
+  .shape-center {
+    position: absolute;
+    @include size($section-width,$shape-center-height);
+    left: 0;
+    top: 35px;
+    background: url("../images/section-center-shape.png") no-repeat 0 0;
+  }
+  .icon-container {
+    position: relative;
+    float: left;
+    @include size($icon-container-width,$section-header-height);
+    .icon {
+      position: relative;
+      margin: 0 auto;
+      @include size($aside-icon-width, $aside-icon-height);
+    }
+  }
+  .section-head {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    padding-left: 19px;
+    @include border-box();
+    @include size($section-width - $icon-container-width,$section-header-height);
+    margin-top: 12px;
+    color: $blue;
+    font: {
+      weight: 600;
+      size: 24px;
+    }
+    text: {
+      transform: uppercase;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  margin-top: 19px;
+  .left-content {
+    float: left;
+    width: $left-content-width;
+    position: relative;
+  }
+  .right-content {
+    float: right;
+    width: $aside-width;
+    position: relative;
+  }
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  margin-top: 22px;
+}
+
+.aside-block {
+  position: relative;
+  width: $aside-width;
+  @include border-box();
+  background: rgba(#000,.5);
+  margin-bottom: 19px;
+  border: 1px solid transparent;
+  @include box-shadow(-1px 2px 4px 0 rgba(#000,.41));
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    z-index: 2;
+    bottom: -1px;
+    @extend %base-gradient-border;
+  }
+  .top-right-corner {
+    @include size($top-right-corner-width,$top-right-corner-height);
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: url("../images/sprite/sprite.png") no-repeat -200px -149px;
+  }
+  .bottom-left-corner {
+    @include size($bottom-left-corner-width,$bottom-left-corner-height);
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    background: url("../images/sprite/sprite.png") no-repeat -214px -149px;
+  }
+  .bottom-right-corner {
+    @include size($bottom-right-corner-width,$bottom-right-corner-height);
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    background: url("../images/sprite/sprite.png") no-repeat -220px -124px;
+  }
+  .btn-container {
+    padding: 5px 20px 20px;
+    position: relative;
+    @include border-box();
+    text-align: right;
+    .join-btn {
+      display: inline-block;
+      @extend %small-green-btn;
+      margin-top: 20px;
+    }
+  }
+}

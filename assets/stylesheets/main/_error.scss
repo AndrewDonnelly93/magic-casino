@@ -1,0 +1,141 @@
+$error-page-h: 1000px;
+$error-404-w: 305px;
+$error-404-h: 150px;
+$error-500-w: 296px;
+$error-500-h: 142px;
+$error-content-wrapper: 860px;
+$section-content-error-w: 1600px;
+
+.error-page {
+  overflow-x: hidden;
+  @include size(100%,$error-page-h);
+  .bg {
+    @include size(100%,$error-page-h);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/error/bg.png") repeat center 0;
+  }
+  .error-content-wrapper {
+    width: $error-content-wrapper;
+    margin: 0 auto;
+    position: relative;
+  }
+  header {
+    height: $logo-href-height + 20;
+    margin-bottom: 62px;
+    .logo {
+      position: relative;
+      margin: 0 auto;
+      @include size($logo-href-width,$logo-href-height);
+      a {
+        position: absolute;
+        left: -2px;
+        top: 20px;
+        @include size($logo-href-width,$logo-href-height);
+        z-index: 4;
+      }
+      &:before {
+        @include size($logo-width,$logo-height);
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 20px;
+        z-index: 3;
+        background: url("../images/mclogo.png") no-repeat 0 0;
+      }
+    }
+  }
+  /* Middle */
+  .section-content-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    .content {
+      position: relative;
+      display: inline-block;
+      z-index: 5;
+      width: $section-content-error-w;
+      margin: 0 -1/2*$section-content-error-w;
+    }
+  }
+  .error-404-logo {
+    margin-top: 127px;
+    @include size($error-404-w, $error-404-h);
+    background: url("../images/error/error-404.png") no-repeat 0 0;
+  }
+  .error-500-logo {
+    margin-top: 119px;
+    @include size($error-500-w, $error-500-h);
+    background: url("../images/error/error-500.png") no-repeat 0 0;
+  }
+  .error-left {
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .error-right {
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+  }
+  .section-content-container {
+    &.error-500 {
+      .error-left {
+        margin-right: 15px;
+      }
+      .error-right {
+        margin-left: 20px;
+      }
+    }
+  }
+  .middle-content {
+    display: inline-block;
+    width: $error-content-wrapper;
+    text-align: center;
+    .content-header {
+      letter-spacing: 1px;
+      margin-bottom: 56px;
+      font: {
+        size: 30px;
+        weight: 300;
+      }
+      color: $light-green;
+      text-transform: uppercase;
+    }
+    .content-middle-header {
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      font: {
+        size: 14px;
+        weight: 300;
+      }
+      text-transform: uppercase;
+      color: $blue;
+    }
+    .to-main-btn-container {
+      .to-main-btn {
+        @extend %green-btn;
+        margin: 80px auto 0;
+      }
+    }
+  }
+  /* Game list */
+  .slider-game-list {
+    .slide {
+      display: inline-block;
+      list-style: none;
+      width: $game-list-item-width !important;
+      margin-right: 13px;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+    .game-item {
+      margin-right: 0;
+      width: $game-list-item-width !important;
+    }
+  }
+}

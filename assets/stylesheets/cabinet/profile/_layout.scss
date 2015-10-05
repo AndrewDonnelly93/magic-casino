@@ -1,0 +1,118 @@
+$profile-block-h: 25px;
+$change-password-btn-w: 140px;
+$change-password-input-w: 172px;
+
+%change-password-btn {
+  @include size($change-password-btn-w,$profile-block-h);
+  display: block;
+  position: relative;
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  font: {
+    weight: 600;
+    size: 12px;
+  }
+  line-height: $profile-block-h + 2;
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  color: #000;
+  &:before {
+    @include size($change-password-btn-w + 2,$profile-block-h + 2);
+    top: 0;
+    left: -1px;
+    background: url("../images/buttons/change-password-btn.png") no-repeat 0 0;
+    content: "";
+    position: absolute;
+  }
+  &:hover {
+    @include text-shadow(1px 0 0 rgba($bright-blue,.75));
+    &:before {
+      background-position: 0 -29px;
+    }
+  }
+}
+
+.cabinet-section.profile {
+  padding-bottom: 20px;
+  .reg-date {
+    text-align: left;
+    font: {
+      weight: 600;
+      size: 11px;
+    }
+    color: $blue;
+    span {
+      color: $base-color;
+    }
+    margin: 25px 0 4px;
+  }
+  .profile-block {
+    position: relative;
+    margin-bottom: 12px;
+    height: $profile-block-h + 2;
+    .account-status {
+      float: left;
+      text-align: left;
+      font: {
+        weight: 600;
+        size: 12px;
+      }
+      color: $blue;
+      line-height: $profile-block-h;
+      span {
+        margin-left: 5px;
+        &.not-confirmed {
+          text-transform: uppercase;
+          color: $orange;
+          font: {
+            family: "Russo One", sans-serif;
+            size: 14px;
+            weight: 400;
+          }
+        }
+        &.confirmed {
+          color: $light-green;
+        }
+      }
+    }
+    .change-password-btn {
+      float: right;
+      @extend %change-password-btn;
+      top: -6px;
+    }
+    .change-password-form {
+      display: none;
+      position: absolute;
+      left: -1px;
+      top: -7px;
+      right: -2px;
+      bottom: 0;
+      .confirm-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @extend %profile-confirm-btn;
+        background-image: url("../images/buttons/confirm-password-btn.png");
+      }
+      .input-container.small {
+        width: $change-password-input-w;
+        float: left;
+        margin-right: 14px;
+        &:last-child {
+          margin-right: 0;
+        }
+        input.form-field {
+          width: $change-password-input-w;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

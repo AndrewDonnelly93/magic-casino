@@ -1,0 +1,17 @@
+@-moz-document url-prefix() {
+  .game-category {
+    position: absolute;
+    left: 0;
+    top: 350px; }
+
+  .main-menu .main-menu-list li.active a {
+    top: 1px; }
+
+  .prizes-table:before {
+    width: 10.7%;
+    left: 0; }
+  .prizes-table li .position {
+    width: 11%;
+    line-height: 32px; }
+  .prizes-table li .prize {
+    width: 89%; } }

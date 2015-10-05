@@ -1,0 +1,31 @@
+$letter-arrow-w: 58px;
+$letter-arrow-h: 52px;
+
+.popup.bonus-activate {
+  .popup-main-head {
+    margin-bottom: 62px;
+  }
+  .popup-head {
+    margin-bottom: 28px;
+  }
+  .popup-middle-head {
+    max-width: 420px;
+    line-height: 1.2;
+    .link {
+      font-size: 14px;
+    }
+    margin: 0 auto 29px;
+  }
+  .letter {
+    &:before {
+      @include size($letter-arrow-w,$letter-arrow-h);
+      right: -25px;
+      bottom: 3px;
+      background: url(../images/popup/popup-arrow.png) no-repeat 0 0;
+    }
+    margin-bottom: 34px;
+  }
+  .ok-btn {
+    margin-bottom: 27px;
+  }
+}

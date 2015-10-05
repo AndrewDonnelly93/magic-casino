@@ -1,0 +1,192 @@
+$blue: #01e7fb;
+
+body {
+  behavior: url(PIE.htc);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b1c1c', endColorstr='#0a0c0c',GradientType=0 );
+}
+
+.main-menu {
+  .main-menu-list {
+    li {
+      a {
+        background: url("../images/old-ie/main-menu.png") repeat-x 0 0;
+        &:hover {
+          background: url("../images/old-ie/main-menu-hover.png") repeat-x 0 0;
+        }
+      }
+    }
+  }
+}
+
+.menu-container {
+  .tab {
+    background: url("../images/old-ie/main-menu.png") repeat-x 0 0;
+    &:hover {
+      background: url("../images/old-ie/main-menu-hover.png") repeat-x 0 0;
+    }
+  }
+}
+
+.aside-block {
+  &:before {
+    border: 1px solid $blue;
+  }
+}
+
+.tourney-card {
+  .left-section {
+    .tourn-img-container {
+      .tourn-info {
+        .super-tourney {
+          background: url("../images/old-ie/super-tourney.png") no-repeat center 0;
+        }
+        .period {
+          background: url("../images/old-ie/tourn-period.png") no-repeat center 0;
+        }
+      }
+    }
+  }
+  &.super-tournament {
+    .bg {
+      background: url("../images/old-ie/tourn-card.png") no-repeat 0 0;
+      background-size: cover;
+      behavior: url(PIE.htc);
+    }
+  }
+}
+
+.popup {
+  .popup-main-head {
+    &:after {
+      background: url("../images/old-ie/blue-head-grad.png") no-repeat 0 0;
+      behavior: url(PIE.htc);
+    }
+  }
+}
+
+.input-container {
+  &:after {
+    background: url("../images/old-ie/input-grad.png") repeat 0 0;
+    behavior: url(PIE.htc);
+    background-size: cover;
+  }
+}
+
+.popup {
+  .captcha-block {
+    .input-container {
+      background: url("../images/old-ie/input-grad.png") repeat 0 0;
+    }
+  }
+}
+
+.leaders-tables {
+  .bg {
+    background: url("../images/old-ie/now-wins-grad.png") no-repeat 0 0;
+    background-size: cover;
+    opacity: 1;
+  }
+}
+
+.prizes-table {
+  li {
+    .position {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.result-table {
+  thead {
+    th {
+      border: 1px solid $blue;
+      border: 1px solid rgba($blue,.25);
+    }
+  }
+}
+
+.game-container {
+
+  &:before {
+    border: 1px solid $blue;
+  }
+  &.demo {
+    .select-greeting-bonus {
+      &:before {
+        background: url("../images/old-ie/game-mode-banner-bg.png") repeat 0 0;
+        behavior: url(PIE.htc);
+      }
+    }
+    .input-block {
+      .input-container {
+        &:after {
+          background: url("../images/old-ie/small-input-grad.png") repeat 0 0;
+          behavior: url(PIE.htc);
+        }
+      }
+    }
+  }
+}
+
+.game-mode {
+  .aside-block.tournaments {
+    .header {
+      &:before {
+        border: 1px solid $blue;
+      }
+    }
+  }
+}
+
+.cabinet {
+  background: url("../images/old-ie/profile-bg.png") no-repeat 0 0;
+  behavior: url(PIE.htc);
+  background-size: cover;
+  &:before {
+    border: 1px solid $blue;
+  }
+}
+
+.cabinet-section {
+  .user-information {
+    .left-section {
+      .input-container {
+        &:after {
+          background: url("../images/old-ie/enter-profile-data.png") repeat 0 0;
+          behavior: url(PIE.htc);
+        }
+      }
+      .date-of-birth-container {
+        &:before {
+          background: url("../images/old-ie/enter-profile-data.png") repeat 0 0;
+          behavior: url(PIE.htc);
+        }
+      }
+    }
+  }
+  .contact-box {
+    .mail, .phone {
+      &:after {
+        background: url("../images/old-ie/show-profile-data.png") repeat 0 0;
+        behavior: url(PIE.htc);
+      }
+      &.open-form {
+        &:after {
+          background: url("../images/old-ie/input-146.png") repeat 0 0;
+        }
+      }
+    }
+  }
+  .exchange-block {
+    .balance-box {
+      .small-frame {
+        background: url("../images/old-ie/exchange-84.png") repeat 0 0;
+      }
+    }
+    .central-section {
+      .small-frame {
+        background: url("../images/old-ie/exchange-94.png") repeat 0 0;
+      }
+    }
+  }
+}

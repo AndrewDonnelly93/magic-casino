@@ -1,0 +1,41 @@
+$small-social-w: 26px;
+$small-social-h: 25px;
+.popup {
+  .social-block {
+    .social-auth {
+      margin-top: 8px;
+      font:
+      {
+        weight: 300;
+        size: 12px;
+      }
+    }
+    .social-list {
+      li {
+        margin-right: 0;
+        .btn {
+          @include size($small-social-w,$small-social-h);
+          background: url("../images/small-social.png") no-repeat 0 0;
+          &.fb {
+            background-position: 0 0;
+            &:hover {
+              background-position: -26px 0;
+            }
+          }
+          &.tw {
+            background-position: -52px 0px;
+            &:hover {
+              background-position: -52px -25px;
+            }
+          }
+          &.gmail {
+            background-position: 0px -25px;
+            &:hover {
+              background-position: -26px -25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

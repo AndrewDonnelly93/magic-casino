@@ -1,0 +1,73 @@
+$game-mode-social-icon-w: 20px;
+$game-mode-social-icon-h: 19px;
+$social-block-texture-w: 27px;
+
+.game-container.demo {
+  .social-block {
+    text-align: center;
+    display: block;
+    width: $column-wrapper-w;
+    margin-right: 0;
+    margin-top: 0;
+    .social-auth {
+      float: none;
+      text-align: left;
+      color: $light-gray;
+      font:
+      {
+        weight: 300;
+        size: 12px;
+      }
+      margin-bottom: 10px;
+    }
+    .social-list {
+      float: none;
+      margin-left: 0;
+      display: block;
+      position: relative;
+      z-index: 2;
+      &:before {
+        @include size($column-wrapper-w,$social-block-texture-w);
+        position: absolute;
+        content: "";
+        left: 0;
+        top: -4px;
+        background: url("../images/lines-35-170x27.png") no-repeat 0 0;
+      }
+      li {
+        position: relative;
+        z-index: 3;
+        margin-right: 12px;
+        @include size($game-mode-social-icon-w,$game-mode-social-icon-h);
+        &:nth-child(2) {
+          margin-right: 11px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .btn {
+          @include size($game-mode-social-icon-w,$game-mode-social-icon-h);
+          background: url("../images/game-mode/social/social.png") no-repeat 0 0;
+          &.fb {
+            background-position: 0 0;
+            &:hover {
+              background-position: -22px 0;
+            }
+          }
+          &.tw {
+            background-position: -44px 0px;
+            &:hover {
+              background-position: -44px -21px;
+            }
+          }
+          &.gmail {
+            background-position: 0px -21px;
+            &:hover {
+              background-position: -22px -21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

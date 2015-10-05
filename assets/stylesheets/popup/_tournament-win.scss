@@ -1,0 +1,77 @@
+$tournament-win-block-w: 540px;
+$tournament-win-icon-w: 324px;
+$tournament-win-icon-h: 160px;
+$tournament-win-4-icon-w: 267px;
+$tournament-win-4-icon-h: 165px;
+
+.popup.tournament-win {
+  .popup-main-head {
+    margin-bottom: 61px;
+  }
+  .popup-head {
+    margin-bottom: 30px;
+  }
+  .popup-block {
+    width: $tournament-win-block-w;
+    padding: 15px 0 33px;
+  }
+  .win-lights {
+    position: absolute;
+    left: -228px;
+    top: 47px;
+    z-index: 2;
+  }
+  .tournament-win-icon {
+    position: relative;
+    z-index: 3;
+    @include size($tournament-win-icon-w,$tournament-win-icon-h);
+    margin-left: 97px;
+    margin-bottom: 30px;
+  }
+  .prize {
+    color: $popup-blue;
+    font: {
+      size: 14px;
+      weight: 600;
+    }
+    margin-bottom: 27px;
+    position: relative;
+    z-index: 2;
+  }
+  .ok-btn {
+    z-index: 2;
+    margin-bottom: 27px;
+  }
+  .link {
+    z-index: 2;
+  }
+  &.first-place {
+    .tournament-win-icon {
+      background: url(../images/popup/tournament-win-1.png) no-repeat 0 0;
+    }
+  }
+  &.second-place {
+    .tournament-win-icon {
+      background: url(../images/popup/tournament-win-2.png) no-repeat 0 0;
+    }
+  }
+  &.third-place {
+    .tournament-win-icon {
+      background: url(../images/popup/tournament-win-3.png) no-repeat 0 0;
+    }
+  }
+  &.fourth-place {
+    .popup-block {
+      padding-top: 25px;
+    }
+    .tournament-win-icon {
+      margin-left: 157px;
+      background: url(../images/popup/tournament-win-4.png) no-repeat 0 0;
+      @include size($tournament-win-4-icon-w,$tournament-win-4-icon-h);
+      margin-bottom: 16px;
+    }
+    .prize {
+      margin-bottom: 25px;
+    }
+  }
+}

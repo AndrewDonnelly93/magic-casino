@@ -1,0 +1,121 @@
+// Fonts
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/helioscond.eot");
+  src: url("../fonts/helioscond.eot")format("embedded-opentype"),
+  url("../fonts/helioscond.woff") format("woff"),
+  url("../fonts/helioscond.ttf") format("truetype"),
+  url("../fonts/helioscond.svg") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HeliosCondBold";
+  src: url("../fonts/helioscondbold.eot");
+  src: url("../fonts/helioscondbold.eot")format("embedded-opentype"),
+  url("../fonts/helioscondbold.woff") format("woff"),
+  url("../fonts/helioscondbold.ttf") format("truetype"),
+  url("../fonts/helioscondbold.svg") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HeliosCondLight";
+  src: url("../fonts/helioscondlight.eot");
+  src: url("../fonts/helioscondlight.eot")format("embedded-opentype"),
+  url("../fonts/helioscondlight.woff") format("woff"),
+  url("../fonts/helioscondlight.ttf") format("truetype"),
+  url("../fonts/helioscondlight.svg") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "HeliosCondThin";
+  src: url("../fonts/helioscondthin.otf");
+  src: url("../fonts/helioscondthin.eot")format("embedded-opentype"),
+  url("../fonts/helioscondthin.woff") format("woff"),
+  url("../fonts/helioscondthin.ttf") format("truetype"),
+  url("../fonts/helioscondthin.svg") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@import "base-declaration";
+@import "base";
+@import "buttons";
+@import "main/layout";
+@import "main/social";
+@import "main/registration";
+@import "main/select-language";
+@import "main/main-menu";
+@import "main/jackpot";
+@import "main/game-category-list";
+@import "main/slider";
+@import "main/game-list";
+@import "main/promo-block";
+@import "main/banner";
+@import "main/sign-up-block";
+@import "main/casino-description";
+@import "main/footer-menu";
+@import "main/logotypes";
+@import "main/winners";
+@import "main/tournaments";
+@import "main/game-month";
+@import "main/header-reg";
+@import "main/characteristics";
+@import "main/status";
+@import "main/error";
+@import "tourneys/tourney-card";
+@import "tourneys/all-tourney-table";
+@import "tourneys/tourney-layout";
+@import "tourneys/prizes-table";
+@import "tourneys/best-players-table";
+@import "tourneys/tourney-stands";
+@import "tourneys/result-table";
+@import "popup/popup-layout";
+@import "popup/small-social-block";
+@import "popup/authorization";
+@import "popup/low-balance";
+@import "popup/out-of-game";
+@import "popup/multiplier";
+@import "popup/connection-error";
+@import "popup/tournament-win";
+@import "popup/confirm-e-mail";
+@import "popup/select-bonus";
+@import "popup/bonus-activate";
+@import "popup/registration";
+@import "popup/status";
+@import "popup/password-recovery";
+@import "popup/refund";
+@import "popup/select-game";
+@import "popup/bonus-activation";
+@import "popup/bonus-is-activated";
+@import "popup/set-new-password";
+@import "popup/password-changed";
+@import "bonus/bonus-layout";
+@import "bonus/bonus-card";
+@import "payment-systems/payment-list";
+@import "payment-systems/payment-info";
+@import "game-mode/layout";
+@import "game-mode/buttons";
+@import "game-mode/user-info";
+@import "game-mode/game-container";
+@import "game-mode/game-list";
+@import "game-mode/leaders-table";
+@import "game-mode/media";
+@import "game-mode/game-of-month";
+@import "game-mode/small-social-block";
+@import "game-mode/tournaments";
+@import "cabinet/layout";
+@import "cabinet/tabs";
+@import "cabinet/cashier";
+@import "cabinet/profile/layout";
+@import "cabinet/profile/status";
+@import "cabinet/profile/contact-box";
+@import "cabinet/profile/profile-info-lines";
+@import "cabinet/profile/user-information";
+@import "cabinet/profile/exchange-section";
+@import "cabinet/bonuses/bonuses";

@@ -1,0 +1,138 @@
+$present-bonus-width: 195px;
+$present-bonus-height: 187px;
+$present-bonus-image-width: 336px;
+$present-bonus-image-height: 342px;
+$present-bonus-border: #264a52;
+$preset-desc-hover: rgb(0, 152, 43);
+$present-bonus-hover-w: 209px;
+$present-bonus-hover-h: 204px;
+$present-bonus-free-spins-w: 196px;
+$present-bonus-free-spins-h: 147px;
+$present-bonus-refund-w: 170px;
+$present-bonus-refund-h: 132px;
+
+.popup.select-bonus {
+  .popup-main-head {
+    margin-bottom: 80px;
+  }
+  .popup-head {
+    margin-bottom: 38px;
+  }
+  .presents-bonuses-list {
+    position: relative;
+    display: inline-block;
+    li {
+      position: relative;
+      display: inline-block;
+      width: $present-bonus-width;
+      vertical-align: top;
+      .popup-block.present-picture {
+        .hover-block {
+          @include size($present-bonus-hover-w,$present-bonus-hover-h);
+          display: none;
+          position: absolute;
+          z-index: 3;
+          top: -9px;
+          left: -8px;
+          background: url(../images/popup/bonus-hover-bg.png) no-repeat 0 0;
+        }
+        width: $present-bonus-width;
+        height: $present-bonus-height;
+        &:before {
+          z-index: 3;
+          border: 0;
+          @include linear-gradient(none);
+        }
+        &:after {
+          top: -2px;
+          border-top: 2px solid $present-bonus-border;
+          border-left: 1px solid $present-bonus-border;
+          border-right: 1px solid $present-bonus-border;
+          border-bottom: 1px solid $present-bonus-border;
+        }
+        margin-bottom: 40px;
+      }
+      z-index: 2;
+      .presents-description {
+        position: relative;
+        z-index: 2;
+        font: {
+          size: 14px;
+          weight: 600;
+        }
+        text-align: center;
+        .name {
+          text-transform: uppercase;
+          color: $blue;
+          margin-bottom: 14px;
+        }
+        .description {
+          color: $popup-blue;
+          font-size: 12px;
+          line-height: 1.3;
+        }
+      }
+      &:hover {
+        .popup-block.present-picture {
+          .hover-block {
+            display: block;
+          }
+        }
+        .presents-description {
+          .name {
+            color: $light-green;
+          }
+          .description {
+            color: $preset-desc-hover;
+          }
+        }
+      }
+      list-style: none;
+      margin-right: 30px;
+      &.free-spins {
+        .popup-block.present-picture {
+          &:before {
+            @include size($present-bonus-free-spins-w,$present-bonus-free-spins-h);
+            background: url(../images/popup/free-spins.png) no-repeat 0 0;
+            top: 24px;
+            left: 8.5px;
+          }
+        }
+      }
+      &.free-drifts {
+        .popup-block.present-picture {
+          &:before {
+            @include size($present-bonus-free-spins-w,$present-bonus-free-spins-h);
+            background: url(../images/popup/free-spins.png) no-repeat 0 0;
+            top: 24px;
+            left: 8.5px;
+          }
+        }
+      }
+      &.double-drifts {
+        .popup-block.present-picture {
+          width: $present-bonus-width + 1;
+          &:before {
+            @include size($present-bonus-refund-w,$present-bonus-refund-h);
+            background: url(../images/popup/refund.png) no-repeat 0 0;
+            top: 25px;
+            left: 18.5px;
+          }
+        }
+      }
+      &.add-refund {
+        .popup-block.present-picture {
+          &:before {
+            @include size($present-bonus-refund-w,$present-bonus-refund-h);
+            background: url(../images/popup/refund.png) no-repeat 0 0;
+            top: 25px;
+            left: 18.5px;
+          }
+        }
+      }
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

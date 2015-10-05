@@ -1,0 +1,158 @@
+$balance-box-w: 192px;
+$balance-box-h: 82px;
+$central-balance-section-w: 252px;
+$central-balance-section-h: 92px;
+$exchange-shape-w: 10px;
+$exchange-shape-h: 7px;
+
+%exchange-big-frame {
+  position: absolute;
+  border: 1px solid $blue;
+  top: -4px;
+  left: -4px;
+  bottom: -4px;
+  right: -4px;
+  @include box-shadow(0 0 7px 2px rgba(53, 243, 255, 0.5), inset 0 0 5px 1px rgba(0, 244, 253, 0.75));
+}
+
+%exchange-small-frame {
+  @include border-radius(5px);
+  @extend %pseudo-one-pixel-more;
+  @include linear-gradient(to top, rgb(0, 254, 72) 0%, rgb(0, 254, 72) 25%, rgba(0, 244, 253, 0.25) 100%);
+}
+
+%exchange-content {
+  @include border-box();
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+  @include border-radius(5px);
+  @include box-shadow(inset 0 0 11px 3px rgba(0, 244, 253, 0.35));
+  background: #000;
+}
+
+
+.cabinet-section {
+  .exchange-block {
+    .balance-box {
+      @include border-box();
+      position: relative;
+      &:before {
+        content: "";
+        @include size($exchange-shape-w,$exchange-shape-h);
+        position: absolute;
+        top: 40px;
+        background: url("../images/profile/sprite/sprite.png") no-repeat -88px -45px;
+      }
+      text-align: center;
+      @include size($balance-box-w,$balance-box-h);
+      @include border-radius(5px);
+      .big-frame {
+          @extend %exchange-big-frame;
+      }
+      .content {
+        padding-top: 12px;
+        @include size($balance-box-w,$balance-box-h);
+        @extend %exchange-content;
+      }
+      .small-frame {
+        @extend %exchange-small-frame;
+      }
+      .balance-text {
+        font: {
+          weight: 600;
+          size: 12px;
+        }
+        color: $blue;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+      }
+      .drifts-points,
+      .account-balance  {
+        text-transform: uppercase;
+        color: $blue;
+        font: {
+          family: "Russo One", sans-serif;
+          size: 24px;
+          weight: 400;
+        }
+      }
+      &.drifts {
+        float: left;
+        &:before {
+          right: -20px;
+        }
+      }
+      &.money {
+        float: right;
+        &:before {
+          left: -20px;
+          background-position: -100px -45px;
+        }
+      }
+    }
+    .central-section {
+      margin-left: 33px;
+      top: -5px;
+      @include border-box();
+      position: relative;
+      float: left;
+      @include border-radius(5px);
+      @include size($central-balance-section-w,$central-balance-section-h);
+      .big-frame {
+        @extend %exchange-big-frame;
+      }
+      .content {
+        padding-top: 9px;
+        @include size($central-balance-section-w,$central-balance-section-h);
+        @extend %exchange-content;
+        @include box-shadow(inset 0 0 11px 5px rgba(0, 254, 72, 0.35));
+      }
+      .small-frame {
+        @extend %exchange-small-frame;
+      }
+      .exchange-btn {
+        @extend %green-btn;
+        margin: 0 auto 10px;
+      }
+      .exchange-text {
+        margin-left: 16px;
+        position: relative;
+        text-align: left;
+        li {
+          display: inline-block;
+          list-style: none;
+          margin-left: 5px;
+          text-transform: uppercase;
+          font: {
+            weight: 600;
+            size: 14px;
+          }
+          color: $light-green;
+          &:first-child {
+            margin-left: 0;
+            text-transform: none;
+          }
+          &:last-child {
+            position: absolute;
+            top: 0;
+            left: 125px;
+          }
+        }
+      }
+    }
+  }
+  .exchange-rate {
+    text-align: left;
+    font: {
+      weight: 600;
+      size: 12px;
+    }
+    color: $blue;
+    margin-top: 22px;
+    span {
+      color: $light-green;
+      text-transform: uppercase;
+    }
+  }
+}

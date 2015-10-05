@@ -1,0 +1,154 @@
+$winners-icon-width: 28px;
+$winners-icon-height: 32px;
+$winners-list-item-width: 280px;
+$winners-list-item-height: 60px;
+$winners-list-img-width: 90px;
+$winners-list-info-w: 98px;
+$winners-list-game-name-h: 30px;
+$winners-list-game-name-arrow-w: 3px;
+$winners-list-game-name-arrow-h: 6px;
+$winners-list-ring-w: 81px;
+$winners-list-ring-h: 70px;
+$winners-list-ring-with-sum-w: 74px;
+$winners-ring-w: 61px;
+$winners-ring-h: 60px;
+
+.aside-block.winners {
+  .aside-header {
+    .icon-container {
+      .icon {
+        @include size($winners-icon-width,$winners-icon-height);
+        background: url("../images/sprite/sprite.png") no-repeat -167px 0px;
+        margin-top: 0px;
+        left: -2px;
+      }
+    }
+  }
+  .winners-list {
+    margin-top: 11px;
+        position: relative;
+    z-index: 6;
+    li {
+      @include size($winners-list-item-width,$winners-list-item-height);
+      background: url("../images/winners-texture.png") no-repeat 0 0;
+      margin: 0 auto 11px;
+      position: relative;
+      list-style: none;
+      .game-border {
+        float: left;
+        @include size(1px,$winners-list-item-height);
+        background: $blue;
+      }
+      .game-img {
+        display: block;
+        @include size($winners-list-img-width,$winners-list-item-height);
+      }
+      .img-container {
+        display: block;
+        position: relative;
+        z-index: 2;
+        float: left;
+        @include size($winners-list-img-width,$winners-list-item-height);
+        .hover-block {
+          display: none;
+          position: absolute;
+          @include size($winners-list-img-width, $winners-list-item-height);
+          top: 0;
+          left: 0;
+          background: rgba(#000,.5);
+          .play-btn {
+            @extend %extrasmall-orange-btn;
+            margin: 20px auto 0;
+          }
+        }
+        &:hover {
+          .hover-block {
+            display: block;
+          }
+        }
+      }
+      .information {
+        float: left;
+        margin-left: 10px;
+        @include size($winners-list-info-w,$winners-list-item-height);
+        .user-name {
+          color: $light-green;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+        .game-name {
+          margin-top: 6px;
+          color: $light-gray;
+          font: {
+            weight: 600;
+            size: 10px;
+          }
+          height: $winners-list-game-name-h;
+          overflow: hidden;
+          line-height: 1.3;
+          padding-left: 10px;
+          position: relative;
+          @include border-box();
+          &:before {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            content: "";
+            @include size($winners-list-game-name-arrow-w,$winners-list-game-name-arrow-h);
+            background: url("../images/sprite/sprite.png") no-repeat -177px -136px;
+          }
+        }
+      }
+      .ring-with-sum {
+        position: relative;
+        width: $winners-list-ring-with-sum-w;
+        float: left;
+        margin-left: 5px;
+        .ring-elements {
+          position: absolute;
+          top: -5px;
+          left: -4%;
+          background: url("../images/winners-ring-elements.png") no-repeat center 0;
+          @include size($winners-list-ring-w, $winners-list-ring-h);
+        }
+        &:before {
+          position: absolute;
+          content: "";
+          top: 1px;
+          left: 7px;
+          background: url("../images/winners-ring.png") no-repeat 0 0;
+          @include size($winners-ring-w,$winners-ring-h);
+        }
+        text-align: center;
+        .sum {
+          margin-left: 3px;
+          margin-top: 23px;
+          position: relative;
+          font: {
+            weight: 600;
+            size: 14px;
+          }
+          color: $basic-sum-color;
+          .rub {
+            position: relative;
+            display: inline;
+            &:before {
+              position: absolute;
+              top: -3px;
+              left: 0;
+              content: "_";
+            }
+          }
+        }
+      }
+      z-index: 6;
+      &:hover {
+        .ring-with-sum {
+          .ring-elements {
+            @include animation(winners-ring-rotate,6s,infinite,linear,none);
+          }
+        }
+        }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+$tourney-content-left-w: 460px;
+$tourney-content-right-w: 700px;
+
+.content.tourney {
+  .content-section {
+    width: 100%;
+    .left-content {
+      width: $tourney-content-left-w;
+      float: left;
+    }
+    .right-content {
+      width: $tourney-content-right-w;
+      float: right;
+    }
+    margin-bottom: 20px;
+    &.rules {
+      margin-top: 35px;
+    }
+    &.winners-and-prizes {
+      margin-bottom: 37px;
+    }
+  }
+  .content-header {
+    text-align: left;
+    padding-left: 19px;
+    margin-bottom: 12px;
+  }
+  .content-box {
+    padding: 12px 20px;
+    width: 100%;
+  }
+  .characteristics {
+    margin-top: 38px;
+    .characteristics-list {
+      td {
+        &.value {
+          padding-right: 86px;
+        }
+      }
+    }
+  }
+}

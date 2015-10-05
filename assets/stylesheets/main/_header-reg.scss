@@ -1,0 +1,200 @@
+$exit-btn-w: 80px;
+$exit-btn-h: 25px;
+$header-right-block-w: 160px;
+$header-reg-w: 940px;
+$header-reg-h: 49px;
+$profile-bottom-position: 8px;
+$profile-name-w: 113px;
+$balance-currency-w: 110px;
+$balance-drifts-w: 65px;
+$bonus-quantity-w: 42px;
+$bonus-quantity-h: 47px;
+$bonus-ring-size: 30px;
+
+%user-info-value {
+  padding-top: 15px;
+  color: $blue;
+  font: {
+    size: 12px;
+    weight: 600;
+  }
+  @extend %text-overflow;
+  text-transform: uppercase;
+}
+
+%exit-btn {
+  @include size($exit-btn-w,$exit-btn-h);
+  font: {
+    size: 14px;
+    weight: 600;
+  }
+  color: #000;
+  background: url("../images/buttons/small-header-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -25px;
+  }
+  @include box-shadow(0 1px 1px 0 rgba(#000,.1), inset 0 1px 0 0 rgba(#fff,.27));
+  @include text-shadow(2px 0 0 $reg-text-shadow);
+  text:
+  {
+    align: center;
+    transform: uppercase;
+    decoration: none;
+  }
+  display: block;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  padding-right: 10px;
+  @include border-box();
+  span {
+    line-height: $reg-btn-height + 1;
+    position: relative;
+    &:before {
+      content: "";
+      top: 3px;
+      right: -13px;
+      position: absolute;
+      display: block;
+      @include size($reg-arrow-width, $reg-arrow-height);
+      background: url("../images/sprite/sprite.png") no-repeat -167px -136px;
+    }
+  }
+}
+
+.header-reg {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  text-align: right;
+  z-index: 10;
+  width: $header-reg-w;
+  height: $header-reg-h;
+  .user-info {
+    float: left;
+    .balance-head {
+      font: {
+        size: 12px;
+        weight: 600;
+      }
+      color: $base-color;
+      text-align: left;
+      padding-top: 10px;
+    }
+    .balance-value {
+      @extend %user-info-value;
+      padding-top: 10px;
+      font: {
+        size: 12px;
+        weight: 600;
+      }
+      text-align: left;
+    }
+    .bonus-quantity {
+      margin-top: 1px;
+      display: block;
+      float: left;
+      @include size($bonus-quantity-w,$bonus-quantity-h);
+      line-height: $bonus-quantity-h + 1;
+      text: {
+        decoration: none;
+        align: center;
+        transform: uppercase;
+      }
+      font: {
+        family: "Russo One", sans-serif;
+        weight: 600;
+        size: 18px;
+      }
+      color: $light-green;
+      position: relative;
+      .bonus-ring-elements {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 1px;
+        @include size($bonus-quantity-w,$bonus-quantity-h);
+        background: url("../images/bonus-ring-elements.png") no-repeat 0 0;
+        &:hover {
+          @include animation(ring-rotate,5s,infinite,linear,none);
+        }
+      }
+      &:before {
+        @include size($bonus-ring-size,$bonus-ring-size);
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 7px;
+        background: url("../images/bonus-ring.png") no-repeat 0 0;
+      }
+    }
+  }
+  .profile-name {
+    width: $profile-name-w;
+    margin-right: 30px;
+    height: $header-reg-h;
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    @include border-box();
+    text-align: left;
+    .my-profile {
+      padding-top: 10px;
+      color: $light-green;
+      text:
+      {
+        transform: uppercase;
+        decoration: underline;
+      }
+      display: block;
+      font: {
+        family: "Russo One", sans-serif;
+        weight: 600;
+        size: 12px;
+      }
+    }
+    .user-name {
+      @extend %user-info-value;
+      padding-top: 8px;
+      text-transform: none;
+    }
+  }
+  .balance-currency {
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    max-width: $balance-currency-w;
+    margin-right: 35px;
+    height: $header-reg-h;
+    &:hover {
+      .balance-head {
+        text-decoration: underline;
+      }
+    }
+  }
+  .balance-drifts {
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    margin-right: 37px;
+    max-width: $balance-drifts-w;
+    height: $header-reg-h;
+    &:hover {
+      .balance-head {
+        text-decoration: underline;
+      }
+    }
+  }
+  .right-block {
+    width: $header-right-block-w;
+    float: right;
+    margin-top: 14px;
+    .exit-btn {
+      @extend %exit-btn;
+      float: left;
+    }
+  }
+}

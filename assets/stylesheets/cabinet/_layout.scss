@@ -1,0 +1,92 @@
+$cabinet-width: 740px;
+$cabinet-content-width: 705px;
+$cabinet-section-bg: rgb(12,16,25);
+$modal-wrapper-width: 700px;
+$form-field-h: 26px;
+$profile-confirm-btn-w: 143px;
+$profile-confirm-btn: rgb(17, 17, 17);
+
+%profile-confirm-btn {
+  @include size($profile-confirm-btn-w,$form-field-h);
+  background: no-repeat 0 -1px;
+  line-height: $form-field-h + 1;
+  position: relative;
+  display: block;
+  font: {
+    family: "Russo One", sans-serif;
+    size: 12px;
+    weight: 400;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  color: $profile-confirm-btn;
+  background: url("../images/buttons/change-password-btn.png") no-repeat 0 0;
+  &:hover {
+    background-position: 0 -30px;
+  }
+}
+
+.cabinet {
+  width: $cabinet-width;
+  position: absolute;
+  top: 65px;
+  margin-left: -1/2 * $cabinet-width;
+  left: 50%;
+  padding-top: 20px;
+  @include box-shadow(-1px 1.7px 4px rgba(0, 0, 0, 0.41));
+  @include linear-gradient(to top, rgba(15, 17, 19, 0.75) 0%, rgba(50, 61, 70, 0.9) 100%);
+  &:before {
+    @extend %full-size-pseudo;
+    @extend %base-gradient-border;
+    z-index: 2;
+  }
+  .top-left-corner {
+    @extend %side-corner;
+    background-position: 0px -22px;
+    top: 0;
+    left: 0;
+  }
+  .bottom-left-corner {
+    @extend %side-corner;
+    background-position: 0 0;
+    bottom: 0;
+    left: 0;
+  }
+  .top-right-corner {
+    @extend %side-corner;
+    background-position: -22px -22px;
+    top: 0;
+    right: 0;
+  }
+  .bottom-right-corner {
+    @extend %side-corner;
+    background-position: -22px 0px;
+    bottom: 0;
+    right: 0;
+  }
+  .modal-wrapper {
+    width: $modal-wrapper-width;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  .cabinet-sections {
+    width: $modal-wrapper-width;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  .cabinet-section {
+    display: none;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    &.active {
+      display: block;
+    }
+  }
+}
+

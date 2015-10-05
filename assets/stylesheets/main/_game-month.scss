@@ -1,0 +1,53 @@
+$game-month-icon-w: 30px;
+$game-month-icon-h: 30px;
+$game-month-img-w: 298px;
+$game-month-img-h: 193px;
+$game-description-h: 55px;
+
+.aside-block.game-month {
+  .aside-header {
+    .icon-container {
+      .icon {
+        @include size($game-month-icon-w, $game-month-icon-h);
+        background: url("../images/sprite/sprite.png") no-repeat -132px -35px;
+        margin-top: 0px;
+        left: -1px;
+      }
+    }
+  }
+  a {
+    display: block;
+    margin: 0 auto;
+    @include size($game-month-img-w, $game-month-img-h);
+    position: relative;
+    z-index: 2;
+  }
+  .game-img {
+    @include size($game-month-img-w, $game-month-img-h);
+    display: block;
+  }
+  .game-description {
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+    bottom: 0;
+    left: 1px;
+    @include size($game-month-img-w, $game-description-h);
+    background: url("../images/gom-texture.png") no-repeat 0 0;
+    .game-name {
+      max-width: 152px;
+      @extend %text-overflow;
+      margin-left: 10px;
+      margin-top: 20px;
+      font-size: 16px;
+      color: $light-green;
+      text-align: left;
+    }
+    .play-btn {
+      @extend %small-green-btn;
+      float: right;
+      top: -23px;
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+$game-mode-user-info-box-h: 30px;
+$progress-bar-elem-w: 54px;
+$progress-bar-elem-h: 5px;
+
+%game-mode-user-info-box {
+  @include size($column-wrapper-w,$game-mode-user-info-box-h);
+  background: rgba(#000,.15);
+  line-height: $game-mode-user-info-box-h;
+  position: relative;
+  &:before {
+    @extend %full-size-pseudo;
+    background: url("../images/diagonal-35.png") no-repeat 0 0;
+  }
+  @include box-shadow(none);
+  color: $blue;
+  font-size: 14px;
+  display: block;
+  text: {
+    align: center;
+    decoration: none;
+  }
+}
+
+.game-mode {
+  .user-info {
+    .status-box {
+      @extend %game-mode-user-info-box;
+      border: 0;
+      float: none;
+      margin-top: 0;
+      margin-bottom: 11px;
+      .user-status {
+        top: -4px;
+        position: relative;
+        z-index: 2;
+        color: $blue;
+        font-size: 14px;
+        margin-left: 0;
+        @include text-shadow(-2px 0 9px rgba($blue, .55),
+                2px 0 9px rgba($blue, .55),
+                0 -2px 9px rgba($blue, .55),
+                0 2px 9px rgba($blue, .55));
+      }
+      .progress-bar {
+        z-index: 2;
+        position: absolute;
+        bottom: -10px;
+        left: 2px;
+        li {
+          opacity: .35;
+          @include size($progress-bar-elem-w,$progress-bar-elem-h);
+          display: inline-block;
+          background: $blue;
+          margin-right: 2px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.active {
+            opacity: 1;
+            span {
+              display: block;
+              background: $blue;
+              @include size($progress-bar-elem-w,$progress-bar-elem-h);
+              @include box-shadow(0 0 5px 1px rgba($blue, 0.55));
+            }
+          }
+        }
+      }
+    }
+    .balance-drifts {
+      @extend %game-mode-user-info-box;
+      margin-bottom: 10px;
+      .balance-head {
+        position: relative;
+        z-index: 2;
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 3px;
+      }
+      .balance-value {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        @include text-shadow(-2px 0 9px rgba($blue, .55),
+                2px 0 9px rgba($blue, .55),
+                0 -2px 9px rgba($blue, .55),
+                0 2px 9px rgba($blue, .55));
+      }
+    }
+    .cashback {
+      @extend %game-mode-user-info-box;
+      .cashback-head {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 11px;
+      }
+      .cashback-value {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        font-size: 13px;
+        text-transform: uppercase;
+        @include text-shadow(-2px 0 9px rgba($blue, .55),
+                2px 0 9px rgba($blue, .55),
+                0 -2px 9px rgba($blue, .55),
+                0 2px 9px rgba($blue, .55));
+      }
+    }
+  }
+}

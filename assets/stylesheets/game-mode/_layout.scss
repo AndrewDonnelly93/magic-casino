@@ -1,0 +1,49 @@
+$small-game-container-height: 576px;
+$small-game-container-width: 978px;
+$middle-game-container-width: 1280px;
+$middle-game-container-height: 646px;
+$big-game-container-width: 1366px;
+$big-game-container-height: 710px;
+$large-game-container-width: 1444px;
+$large-game-container-height: 768px;
+$small-center-width: 768px;
+$middle-center-width: 860px;
+$big-center-width: 946px;
+$large-center-width: 1024px;
+
+$column-wrapper-w: 170px;
+$bottom-elements-h: 188px;
+$top-elements-h: 185px;
+$game-item-margin-bottom: 10px;
+$middle-game-item-height: 145px;
+
+.game-mode {
+  background: url("../images/game-mode/bg-img.png") repeat center center;
+  background-size: cover;
+  overflow-x: hidden;
+  min-width: $small-game-container-width;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  height: $small-game-container-height;
+  position: relative;
+  font-weight: 600;
+  .bottom-elements {
+    position: absolute;
+    @include size(100%,$bottom-elements-h);
+    bottom: 0;
+    left: 0;
+    background: url("../images/game-mode/bottom-elements.png") repeat center center;
+  }
+  .top-elements {
+    position: absolute;
+    @include size(100%,$top-elements-h);
+    top: 0;
+    left: 0;
+    background: url("../images/game-mode/top-elements.png") repeat center center;
+  }
+}
+
+iframe:focus {
+  outline: none;
+}

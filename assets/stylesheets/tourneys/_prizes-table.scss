@@ -1,0 +1,59 @@
+$prizes-first-cell: 47px;
+$prizes-second-cell: 410px;
+$prizes-cell-h: 30px;
+
+.prizes-table {
+  width: 100%;
+  @extend %basic-block;
+  display: block;
+  color: $base-color;
+  font: {
+    weight: 600;
+    size: 12px;
+  }
+  position: relative;
+  &:before {
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: 410px;
+    content: "";
+    position: absolute;
+    @include box-shadow(0 0 5px 1px rgba($superlight-blue, 0.5), inset 0 0 5px 1px rgba($blue, 0.5));
+    @include gradient-border(to top, rgb(0, 173, 194) 0%, rgb(213, 253, 255) 35%,
+            rgb(102, 239, 255) 100%);
+  }
+  li {
+    display: block;
+    position: relative;
+    height: $prizes-cell-h;
+    line-height: $prizes-cell-h - 1;  
+    .bg {
+        @extend %full-size-pseudo;
+        left: 1px;
+        background: url("../images/lines-25-290x30.png") repeat-x 0 0;
+    }
+    &:nth-child(even) {
+      background: rgba(#000,.25);
+    }
+      text-align: center;
+      .position {
+        height: $prizes-cell-h;
+        line-height: $prizes-cell-h + 1;
+        float: left;
+        border-bottom: 1px solid $blue;
+        width: $prizes-first-cell;
+        @include border-box();
+        position: relative;
+        z-index: 2;
+      }
+      .prize {
+        height: $prizes-cell-h;
+        line-height: $prizes-cell-h + 2;
+        float: right;
+        width: $prizes-second-cell;
+        position: relative;
+        z-index: 2;
+      }
+    }
+}

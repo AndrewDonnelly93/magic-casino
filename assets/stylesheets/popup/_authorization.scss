@@ -1,0 +1,30 @@
+$form-wrapper-social-w: 330px;
+
+.popup.authorization {
+  .auth-form {
+    .input-container {
+        margin-bottom: 30px;
+    }
+    margin-bottom: 4px;
+    .link {
+      margin-bottom: 30px;
+    }
+    .submit-form-btn {
+      margin-bottom: 28px;
+    }
+    .popup-description {
+      .link {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .enter-social-block {
+    padding-top: 30px;
+    .form-wrapper {
+      width: $form-wrapper-social-w;
+    }
+  }
+  .social-block {
+    margin: 0 0 10px;
+  }
+}

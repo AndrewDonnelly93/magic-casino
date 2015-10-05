@@ -1,0 +1,70 @@
+$comp-points-width: 410px;
+$comp-points-height: 85px;
+$multiplier-width: 115px;
+$multiplier-cross-width: 26px;
+$multiplier-cross-height: 23px;
+$multiplier-text-shadow: #1eb30e;
+$multiplier: rgb(0, 250, 40);
+
+.popup.multiplier {
+  .popup-main-head {
+    margin-bottom: 106px;
+  }
+  .popup-head {
+    margin-bottom: 25px;
+  }
+  .popup-middle-head {
+    margin-bottom: 56px;
+  }
+    .comp-points {
+      position: relative;
+      width: $comp-points-width;
+      height: $comp-points-height;
+      display: block;
+      margin: 0 auto;
+      background: url(../images/popup/multiplier.png) no-repeat 0 0;
+      .multiplier {
+        padding-left: 22px;
+        text-align: center;
+        position: relative;
+        @include border-box();
+        span {
+          position: relative;
+          @include text-shadow(1px 0 0 $multiplier-text-shadow,
+                  0 1px 0px $multiplier-text-shadow,
+                  -1px 0 0px $multiplier-text-shadow,
+                  0 -1px 0px $multiplier-text-shadow);
+          font: {
+            size: 50px;
+            weight: 400;
+            family: "Russo One", sans-serif;
+          }
+          height: $comp-points-height;
+          line-height: $comp-points-height + 1;
+          color: $multiplier;
+          &:before {
+            content: "";
+            position: absolute;
+            width: $multiplier-cross-width;
+            height: $multiplier-cross-height;
+            top: 18px;
+            left: -30px;
+            background: url(../images/sprite/sprite.png) no-repeat -56px -180px;
+          }
+        }
+        &:first-child {
+          float: left;
+        }
+        &:last-child {
+          float: right;
+        }
+        width: $multiplier-width;
+        display: block;
+        list-style: none;
+        height: $comp-points-height;
+      }
+    }
+    .ok-btn {
+      margin: 77px auto 0;
+    }
+}

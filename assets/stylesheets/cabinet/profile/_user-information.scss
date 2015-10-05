@@ -1,0 +1,162 @@
+$user-left-section-w: 460px;
+$user-form-field-h: 37px;
+$user-form-field-w: 218px;
+
+%input-field {
+  color: $light-gray;
+  font: {
+    weight: 300;
+    size: 12px;
+  }
+  text: {
+    transform: uppercase;
+  }
+}
+
+.cabinet-section {
+  .user-information {
+    input.form-field {
+      height: $form-field-h;
+      line-height: $form-field-h - 10;
+      padding-left: 13px;
+      padding-right: 19px;
+    }
+    .birth-date {
+      float: left;
+    }
+    .input-container {
+      &.fail {
+        &:before {
+          top: 6px;
+          right: 5px;
+        }
+      }
+      &.success {
+        &:before {
+          top: 8px;
+          right: 5px;
+        }
+      }
+    }
+    .left-section {
+      float: left;
+      width: $user-left-section-w;
+      .input-container {
+        @include size($user-form-field-w, $user-form-field-h);
+        &:first-child {
+          float: left;
+        }
+        &:last-child {
+          float: right;
+        }
+        &:after {
+          top: 0;
+          left: -1px;
+          @include size($user-form-field-w + 2, $user-form-field-h + 2);
+        }
+        input::-webkit-input-placeholder {
+          @extend %input-field;
+          text-transform: uppercase;
+        }
+        input:-moz-placeholder {
+          @extend %input-field;
+          text-transform: uppercase;
+        }
+        input:-ms-input-placeholder {
+          @extend %input-field;
+          text-transform: uppercase;
+        }
+        .form-field {
+          line-height: $user-form-field-h + 1;
+          @include size($user-form-field-w, $user-form-field-h);
+          font: {
+            weight: 600;
+            size: 12px;
+          }
+          text-transform: none;
+          padding-left: 10px;
+          color: $base-color;
+        }
+        color: $base-color;
+      }
+      .date-of-birth-container {
+        @include size($user-left-section-w,$user-form-field-h);
+        position: relative;
+        text-transform: uppercase;
+        @include border-box();
+        line-height: $user-form-field-h + 1;
+        background: $form-field-bg;
+        .date-of-birth-wrapper {
+          @include size($user-left-section-w,$user-form-field-h);
+          position: relative;
+          background: $form-field-bg;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          @include size($user-left-section-w + 2,$user-form-field-h + 2);
+          background: rgb(102, 239, 255);
+          @include linear-gradient(to top, rgb(0, 173, 194) 0%,
+                  rgb(213, 253, 255) 35%, rgb(102, 239, 255) 100%);
+          @include box-shadow(0 0 5px 1px rgba(53, 243, 255, 0.5));
+        }
+        margin-top: 24px;
+        .date-of-birth {
+          float: left;
+          padding-left: 10px;
+          font: {
+            weight: 300;
+            size: 12px;
+          }
+          color: $blue;
+        }
+        .select-container{
+          position: relative;
+          float: right;
+        }
+      }
+    }
+    .right-section {
+      float: left;
+      margin-left: 20px;
+      .gender-container {
+        font: {
+          weight: 300;
+          size: 12px;
+        }
+        position: relative;
+        text:
+        {
+          align: left;
+          transform: uppercase;
+        }
+        color: $blue;
+
+        input[type="radio"] + label {
+          margin-left: 55px;
+        }
+        input[type="radio"] + label span {
+          left: -20px;
+          @include size($small-checkbox-size, $small-checkbox-size);
+          background: url(../images/game-mode/sprite/sprite.png) no-repeat 0 -44px;
+          top: 1px;
+        }
+        input[type="radio"] + label span:hover {
+          background-position: 0px -44px;
+        }
+        input[type="radio"]:checked + label span,
+        input[type="radio"]:checked + label span:hover {
+          background-position: -44px -20px;
+        }
+      }
+      .confirm-btn {
+        margin-top: 49px;
+        float: left;
+        @extend %orange-btn;
+      }
+    }
+    margin-bottom: 48px;
+  }
+}

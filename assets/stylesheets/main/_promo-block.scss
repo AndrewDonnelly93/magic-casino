@@ -1,0 +1,239 @@
+$promo-block-height: 287px;
+$promo-icon-width: 39px;
+$promo-icon-height: 24px;
+$promo-frame-height: 261px;
+$promo-frame-width: 316px;
+$promo-item-width: 307px;
+$promo-item-height: 252px;
+$promo-light-width: 293px;
+$promo-light-height: 238px;
+$promo-header-width: 293px;
+$promo-header-height: 70px;
+$promo-block-description-height: 32px;
+$promo-image-width: 293px;
+$promo-image-height: 238px;
+$promo-footer-width: 293px;
+$promo-footer-height: 58px;
+$promo-list-height: 75px;
+$promo-list-item-height: 25px;
+$promo-list-width: 140px;
+$promo-list-user-name-width: 82px;
+$promo-list-sum-width: 58px;
+
+.promo-block {
+  @include size($section-width,$promo-block-height);
+  background: url("../images/section-bg.png") no-repeat 0 0;
+  margin: 0 auto 20px;
+  .section-header {
+    .icon-container {
+      .icon {
+        @include size($promo-icon-width,$promo-icon-height);
+        margin-top: 12px;
+        left: -1px;
+        background: url("../images/sprite/sprite.png") no-repeat 0px -88px;
+      }
+    }
+  }
+}
+
+.promo-item {
+  position: relative;
+  @include size($promo-item-width,$promo-item-height);
+  text-align: right;
+  .promo-frame {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    @include size($promo-frame-width,$promo-frame-height);
+    background: url("../images/promo/promo-frame.png") no-repeat 0 0;
+    background-size: cover;
+  }
+  .promo-light {
+    position: absolute;
+    top: 8.5px;
+    left: 9px;
+    @include size($promo-light-width,$promo-light-height);
+    z-index: 4;
+    background: url("../images/promo/promo-blue-light.png") no-repeat 0 0;
+    background-size: cover;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    z-index: 5;
+    @include size($promo-image-width + 2,$promo-image-height + 2);
+    background: url("../images/promo/promo-frame-2.png") no-repeat 0 0;
+    background-size: cover;
+  }
+  .promo-header {
+    text-align: left;
+    @include size($promo-header-width, $promo-header-height);
+    &:before {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      background: url("../images/promo/promo-header.png") repeat-x 0 0;
+    }
+    background-size: cover;
+    @include border-box();
+    padding-left: 19px;
+    padding-right: 19px;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    z-index: 2;
+    .promo-head {
+      backface-visibility: hidden;
+      @include transform(translateZ(0) scale(1.0, 1.0) translate3d(0,0,0));
+      -webkit-font-smoothing: subpixel-antialiased;
+      position: relative;
+      z-index: 4;
+      font: {
+        weight: 600;
+        size: 16px;
+      }
+      color: $blue;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+    .promo-block-description {
+      backface-visibility: hidden;
+      @include transform(translateZ(0) scale(1.0, 1.0) translate3d(0,0,0));
+      -webkit-font-smoothing: subpixel-antialiased;
+      z-index: 4;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      overflow: hidden;
+      @include border-box();
+      padding-left: 22px;
+      padding-right: 32px;
+      @include size(100%, $promo-block-description-height);
+      font: {
+        size: 14px;
+      }
+      line-height: 1.2;
+      color: #000;
+    }
+  }
+    .promo-image {
+      position: absolute;
+      display: block;
+      top: 9px;
+      left: 9px;
+      @include size($promo-image-width,$promo-image-height);
+    }
+  .start-btn {
+    backface-visibility: hidden;
+    @include transform(translateZ(0) scale(1.0, 1.0) translate3d(0,0,0));
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-size: 13px;
+    line-height: 42px;
+    @extend %green-btn;
+    display: inline-block !important;
+    position: absolute !important;
+    bottom: 19px !important;
+    right: 20px !important;
+    z-index: 6 !important;
+  }
+    .promo-footer {
+      position: absolute;
+      bottom: 4px;
+      left: 9px;
+      @include size($promo-footer-width,$promo-footer-height);
+      background: url("../images/promo/promo-footer.png") no-repeat 0 0;
+      background-size: cover;
+    }
+    .promo-list {
+      display: inline-block;
+      @include size($promo-list-width,$promo-list-height);
+      margin-right: 19px;
+      margin-top: 93px;
+      position: relative;
+      z-index: 5;
+      li {
+        display: block;
+        @include size(100%,$promo-list-item-height);
+        line-height: $promo-list-item-height;
+        @include border-box();
+        background: url("../images/promo/promo-user-row.png") no-repeat 0 0;
+        background-size: cover;
+        .user-name {
+          backface-visibility: hidden;
+          @include transform(translateZ(0) scale(1.0, 1.0) translate3d(0,0,0));
+          -webkit-font-smoothing: subpixel-antialiased;
+          -webkit-perspective: 1000;
+          line-height: $promo-list-item-height + 2;
+          @include border-box();
+          float: left;
+          @include size($promo-list-user-name-width,$promo-list-item-height);
+          padding-left: 10px;
+          padding-right: 3px;
+          text-align: left;
+          color: $green;
+          font-size: 10px;
+        }
+        .sum {
+          backface-visibility: hidden;
+          @include transform(translateZ(0) scale(1.0, 1.0) translate3d(0,0,0));
+          -webkit-font-smoothing: subpixel-antialiased;
+          line-height: $promo-list-item-height + 1;
+          text-align: center;
+          @include border-box();
+          float: right;
+          @include size($promo-list-sum-width,$promo-list-item-height);
+          color: $basic-sum-color;
+          font: {
+            weight: 600;
+            size: 11px;
+          }
+          .rub {
+            position: relative;
+            display: inline;
+            &:before {
+              position: absolute;
+              top: -9px;
+              left: 0;
+              content: "_";
+            }
+          }
+        }
+      }
+  }
+
+  &.active {
+    .promo-light {
+      background: url("../images/promo/promo-green-light.png") no-repeat 0 0;
+    }
+    .promo-header {
+      background-position: 0 -70px;
+      .promo-head {
+        color: $light-green;
+        margin-top: 8px;
+      }
+    }
+    .start-btn {
+      @extend %orange-btn;
+    }
+  }
+  &.lottery {
+    .promo-image {
+      background: url("../images/promo/promo-img-lottery.png") no-repeat 0 0;
+    }
+  }
+  &.cashback {
+    .promo-image {
+      background: url("../images/promo/promo-img-cashback.png") no-repeat 0 0;
+    }
+  }
+  &.comp-points {
+    .promo-image {
+      background: url("../images/promo/promo-img-points.png") no-repeat 0 0;
+    }
+  }
+}

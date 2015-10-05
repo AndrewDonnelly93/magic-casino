@@ -1,0 +1,90 @@
+$middle-game-hover-frame-w: 182px;
+$middle-game-hover-frame-h: 156px;
+$middle-game-frame-height: 35px;
+$middle-game-ing-height: 110px;
+
+.game-container {
+  .game-list {
+    overflow: hidden;
+    margin: 0 auto;
+    width: $column-wrapper-w + 2;
+    .game-item {
+      margin-right: 0;
+      display: block;
+      @include size($column-wrapper-w + 2,$middle-game-item-height);
+      margin-bottom: $game-item-margin-bottom;
+      .hover-block {
+        @include size($column-wrapper-w + 2,$middle-game-item-height);
+        .btn-block {
+          position: relative;
+          z-index: 2;
+          &.play-btn-only {
+            .play-btn {
+              margin-top: 1/2 * ($middle-game-ing-height - $standard-btn-height);
+            }
+          }
+        }
+        .hover-frame {
+          position: absolute;
+          top: -6px;
+          left: -6px;
+          @include size($middle-game-hover-frame-w,$middle-game-hover-frame-h);
+          background: url("../images/game-mode/game-hover-bg.png") no-repeat 0 0;
+        }
+      }
+      .game-img {
+        @include size($column-wrapper-w, $middle-game-ing-height);
+      }
+      .game-frame {
+        @include size($column-wrapper-w, $middle-game-frame-height);
+        border-bottom: 1px solid $blue;
+        .game-name {
+          font-size: 10px;
+          line-height: $middle-game-frame-height - 1;
+        }
+        .rating {
+          li {
+            width: $game-rating-item-width - 1;
+            .active {
+              width: $game-rating-item-width - 1;
+            }
+          }
+        }
+      }
+      &:hover {
+        .game-frame {
+          .game-name {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.game-container.demo {
+  .game-list {
+    .game-item {
+      .game-frame {
+        .game-name {
+          line-height: $middle-game-frame-height - 1;
+        }
+        .rating {
+          display: none;
+        }
+      }
+      &:hover {
+        .game-frame {
+          .game-name {
+            color: $blue;
+            @include text-shadow(-2px 0 9px rgba(107, 246, 255, 0.7),
+                    2px 0 9px rgba(107, 246, 255, 0.7),
+                    0 -2px 9px rgba(107, 246, 255, 0.7),
+                    0 2px 9px rgba(107, 246, 255, 0.7));
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

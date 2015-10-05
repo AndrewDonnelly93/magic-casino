@@ -1,0 +1,19 @@
+$speedometer-w: 239px;
+$speedometer-h: 223px;
+
+.popup.low-balance {
+  .popup-main-head {
+    margin-bottom: 72px;
+  }
+  .popup-head {
+    margin-bottom: 25px;
+  }
+  .popup-middle-head {
+    margin-bottom: 28px;
+  }
+  .speedometer {
+    @include size($speedometer-w,$speedometer-h);
+    background: url("../images/popup/speedometer.png") no-repeat 0 0;
+    margin: 0 auto 46px;
+  }
+}

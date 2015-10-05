@@ -1,0 +1,10 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main-menu .main-menu-list li.active a {
+    line-height: 43px;
+    top: -1px; }
+
+  .prizes-table li .position {
+    border: 1px solid #01e7fb; }
+
+  .result-table thead {
+    border: 1px solid #01e7fb; } }

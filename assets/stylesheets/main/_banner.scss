@@ -1,0 +1,80 @@
+$banner-block-height: 133px;
+$banner-left-container-width: 216px;
+$banner-left-container-height: 146px;
+$banner-description-block-width: 506px;
+$banner-game-line-height: 41px;
+$banner-game-name-width: 340px;
+$banner-game-description-height: 57px;
+$banner-right-image-width: 212px;
+$banner-right-image-height: 205px;
+
+.banner-block {
+  @include size($section-width,$banner-block-height);
+  background: url("../images/section-bg.png") no-repeat 0 0;
+  margin: 39px auto;
+  position: relative;
+  .banner-left-container {
+    position: absolute;
+    left: -9px;
+    top: -8px;
+    @include size($banner-left-container-width,$banner-left-container-height);
+    background: url("../images/banner-left-container.png") no-repeat 0 0;
+    a {
+      display: block;
+    }
+    .banner-game-img {
+      position: relative;
+      @include size($game-img-width,$game-img-height);
+      display: block;
+      margin: 8px auto 0;
+      z-index: 2;
+    }
+  }
+  .banner-description-block {
+    margin-left: 220px;
+    position: relative;
+    z-index: 2;
+    padding-top: 11px;
+    @include size($banner-description-block-width,$banner-block-height);
+    .banner-game-line {
+      background: url("../images/banner-game-name.png") no-repeat 0 0;
+      @include size($banner-description-block-width,$banner-game-line-height);
+      line-height: $banner-game-line-height + 1;
+      .banner-game-name {
+        float: left;
+        @include border-box();
+        @include size($banner-game-name-width,$banner-game-line-height);
+        padding-left: 13px;
+        font: {
+          size: 24px;
+          weight: 600;
+        }
+        color: #000;
+      }
+      .play-btn {
+        float: right;
+        @extend %orange-btn;
+        margin-right: 8px;
+        margin-top: 1px;
+      }
+    }
+    .banner-game-description {
+      margin-top: 14px;
+      line-height: 1.5;
+      height: $banner-game-description-height;
+      font: {
+        size: 12px;
+        weight: 600;
+      }
+      color: $blue;
+      overflow: hidden;
+    }
+  }
+  .banner-right-image {
+    position: absolute;
+    top: -31px;
+    right: -19px;
+    @include size($banner-right-image-width,$banner-right-image-height);
+    background: url("../images/banner-right-image.png") no-repeat 0 0;
+  }
+}
